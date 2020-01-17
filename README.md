@@ -44,6 +44,9 @@
 
 ## MVP
 
+- A space storage organizer that stores and queries catalogued items
+
+-Define spaces/ containers -> Open ew space -> Define associated items.
 
 
 ## Stretch Goals
@@ -51,7 +54,7 @@
 
 
 ## Future Development
-
+- Auto generate item IDS  -> Query based on names
 
 ## Credits/Resources
 
