@@ -15,9 +15,9 @@
   - https://www.linkedin.com/in/diptikatkar/
 
 - Developer 2: Kitrick Bell
-  - Portfolio
-  - Github
-  - LinkedIn
+  - Portfolio: https://kibell.github.io/Bootstrap-Portfolio/
+  - Github: https://github.com/kibell
+  - LinkedIn: https://www.linkedin.com/in/kitrick-bell-83221494/
   
 
 - Developer 3: Elham Poshtiban
