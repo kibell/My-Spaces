@@ -21,9 +21,9 @@
   
 
 - Developer 3: Elham Poshtiban
-  - Portfolio
-  - Github
-  - LinkedIn
+  - https://elhamposhtiban.github.io/Bootstrap-Portfolio/
+  - https://github.com/elhamposhtiban
+  - https://www.linkedin.com/in/elham-poshtiban-2a40a4149/
 
 - Developer 4:Adam Verma
 
