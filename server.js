@@ -5,7 +5,7 @@ const exphbs = require ("express-handlebars");
 app = express ();
 const PORT = process.env.PORT || 2020;
 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname +'/public'));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -15,7 +15,7 @@ app.set("view engine", "handlebars");
 
 app.get("/", function (err,res) {
 
-res.render("index", res);
+res.render("storage", res);
 
  });
 

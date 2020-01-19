@@ -1,0 +1,35 @@
+
+/*color for layout*/
+/* #506E98 */
+/* #2D4D78 */
+/* #14335D */
+/* #051D3F */
+/* #7A92B3 */
+
+* {
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'PT Serif', serif;
+}
+
+.logo-image{
+    height: 60px;
+} 
+
+.nav-item {
+
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 8px;
+    margin-bottom: -11px;
+    color:  #506E98 ;
+}
+
+
+
+
+
+
