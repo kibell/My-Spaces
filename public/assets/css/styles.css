@@ -164,7 +164,7 @@ body {
     text-align: center
 }
 
-
+/* card */
 .card-header {
     text-transform: uppercase;
     text-decoration: none;
@@ -175,8 +175,12 @@ body {
     
 }
 
-.card-area {
+.card-profile {
+  animation:  moveInLeft 2s ease-out ; 
+}
 
+.card-area {
+    animation:  moveInLeft 2s ease-out ; 
 }
 
 .title-area {
@@ -188,6 +192,23 @@ body {
     margin-left: 42px ; 
     padding: 5px;
     color:  #506E98 ; }
+
+
+    /* animation */
+
+    @keyframes moveInLeft {
+        0%{
+         opacity: 0;
+         transform: translateX(-100px);
+        }
+        80%{
+           transform: translateX(10px);
+        }
+        100%{
+         opacity: 1;
+         transform: translate(0);
+        }
+       }
 
 
 
