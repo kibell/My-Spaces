@@ -9,25 +9,100 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
+            <ul class="navbar-nav mr-auto part-left">
+                <li class="nav-item-left">
                     <a class="nav-link active" href="#">Home
                         <span class="sr-only">(current)</span>   
                     </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item-left">
                     <a class="nav-link" href="#"> Item List </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item-left">
                     <a class="nav-link" href="#"> Sell your's</a>
                 </li>
             </ul>
             <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search">
-                <button class="btn btn-outline-primary my-2 my-sm-0 mr-sm-2 navbar-btn" type="submit">Search</button>
-
-                <button class="btn btn-outline-primary my-2 my-sm-0 mr-sm-2 navbar-btn" type="submit"
-                    id="log-out-button">Log Out</button>
+                <ul class="navbar-nav mr-auto part-right">
+                    <li class="nav-item-right">
+                        <a href="#" class= "noticifation-btn"><i class="far fa-bell notification-icone"></i></a>
+                    </li>
+                    {{!-- <li class="nav-item-right"> 
+                        <input class="form-control mr-sm-2" type="search" placeholder="" aria-label="Search">
+                        <button class="btn btn-outline-primary my-2 my-sm-0 mr-sm-2 navbar-btn" type="submit">Search</button>
+                    </li> --}}
+                    <li class="nav-item-right">
+                        <a href="#" class="log-out-btn"> <i class="fas fa-power-off icone-logout">  </i>      
+                        </a>
+                    </li>
+                </ul>
             </form>
         </div>
     </nav>
+
+        <!--mainpage-->
+ <div class="container mt-4">
+    <div class="row mt-4">
+                <br>
+                <div class="col-md-4">      
+                    <div class="portlet light profile-sidebar-portlet bordered">
+                        <div class="profile-userpic">
+                            <i class="fas fa-user" id="user-icone"></i> 
+                        </div>
+                        <div class="profile-usertitle">
+                            <div class="profile-usertitle-name"> </div>
+                        </div>
+                        <div class="profile-userbuttons">
+                            <button type="button" class="btn btn-info  btn-sm">Message</button>
+                        </div>
+                        <div class="profile-usermenu">
+                            <span class="storage-item"> the items he or she store</span>
+                            <br>
+                            <span class="storage-spaces"> the spaces that her or she used</span>
+                        </div>
+                    </div>
+                </div>
+        <div class="col-md-8"> 
+            <div class="portlet light bordered">
+                <div class="portlet-title tabbable-line">
+                    <div class="caption caption-md">
+                        <i class="icon-globe theme-font hide"></i>
+                        <span class="caption-subject font-blue-madison bold uppercase">Your spaces</span>
+                    </div>
+                </div>
+                <div class="portlet-body">
+                    <ul class="navbar mr-auto spaces-list">
+                        <li class="spaces-item"> <a href="#"><i class="fas fa-bath icone-spaces"></i></a></li>
+                        <li class="spaces-item"> <a href="#"><i class="fas fa-bed icone-spaces"></i></a></li>
+                        <li class="spaces-item"> <a href="#"><i class="fas fa-plus icone-spaces"></i></a></li>
+                    </ul>
+                
+                </div>
+            </div>
+        </div>
+    </div>
+ </div>
+
+     <!--fixed bottom footer-->
+    <nav class="navbar-bottom navbar-expand-lg navbar-light bg-light" id="bottom-navbar">
+        <div class="collapse navbar-collapse" id="bottom-navbar-content">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">About Us <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">LinkedIn</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Instagram</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Twitter</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
