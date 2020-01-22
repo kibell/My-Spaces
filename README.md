@@ -15,9 +15,10 @@
   - https://www.linkedin.com/in/diptikatkar/
 
 - Developer 2: Kitrick Bell
-  - Portfolio
-  - Github
-  - LinkedIn
+  - Portfolio: https://kibell.github.io/Bootstrap-Portfolio/
+  - Github: https://github.com/kibell
+  - LinkedIn: https://www.linkedin.com/in/kitrick-bell-83221494/
+  
 
 - Developer 3: Elham Poshtiban
   - https://elhamposhtiban.github.io/Bootstrap-Portfolio/
@@ -44,6 +45,9 @@
 
 ## MVP
 
+- A space storage organizer that stores and queries catalogued items
+
+-Define spaces/ containers -> Open ew space -> Define associated items.
 
 
 ## Stretch Goals
@@ -51,7 +55,7 @@
 
 
 ## Future Development
-
+- Auto generate item IDS  -> Query based on names
 
 ## Credits/Resources
 
