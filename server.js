@@ -1,12 +1,10 @@
 
-const express = require('express');
+
 const PORT = process.env.PORT || 8000;
-const app = express();
 const passport = require('passport')
 const flash = require('express-flash')
 const session = require('express-session')
 const env = require('dotenv')
-const exphbs = require('express-handlebars')
 //Models
 const models = require("./models")
 
@@ -33,6 +31,34 @@ app.use(passport.session()); // persistent login sessions
 
 
 //For handlebars
+// *****************************************************************************
+// Server.js - This file is the initial starting point for the Node/Express server.
+//
+// ******************************************************************************
+// *** Dependencies
+// =============================================================
+const express = require("express");
+const methodOverride = require("method-override");
+const exphbs = require ("express-handlebars");
+
+// Sets up the Express App
+// =============================================================
+
+
+// Requiring our models for syncing
+const db = require("./models");
+
+// Sets up the Express app to handle data parsing
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+
+// Override POST with ?_method=PUT
+app.use(methodOverride("_method"));
+
+// Static directory
+app.use(express.static("public"));
+
+
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
@@ -59,5 +85,20 @@ app.listen(PORT, function() {
 
 
 
+
+
+// Routes
+// =============================================================
+require("./routes/html-routes.js")(app);
+require("./routes/author-api-routes.js")(app);
+require("./routes/post-api-routes.js")(app);
+
+// Syncing our sequelize models and then starting our Express app
+// =============================================================
+db.sequelize.sync({ force: true }).then(function() {
+  app.listen(PORT, function() {
+    console.log("App listening on PORT " + PORT);
+  });
+});
 
 
