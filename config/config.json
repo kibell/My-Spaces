@@ -1,4 +1,5 @@
 {
+ 
     "development": {
       "username": "root",
       "password": "root",
@@ -7,21 +8,26 @@
       "dialect": "mysql",
       "operatorsAliases": false
     },
+ 
     "test": {
-      "username": "root",
-      "password": null,
-      "database": "myspaces",
-      "host": "127.0.0.1",
-      "dialect": "mysql",
-      "operatorsAliases": false
+ 
+        "username": "root",
+        "password": null,
+        "database": "myspaces",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
     },
+ 
     "production": {
-      "username": "root",
-      "password": null,
-      "database": "myspaces",
-      "host": "127.0.0.1",
-      "dialect": "mysql",
-      "operatorsAliases": false
+ 
+        "username": "root",
+        "password": null,
+        "database": "myspaces",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+ 
     }
-  }
+}
+ 
+
   
