@@ -3,41 +3,28 @@
     "development": {
  
         "username": "root",
- 
-        "password": "@hokageKB1",
- 
-        "database": "sequelize_passport",
- 
+        "password": null,
+        "database": "myspaces",
         "host": "127.0.0.1",
- 
         "dialect": "mysql"
  
     },
  
     "test": {
  
-        "username": "",
- 
+        "username": "root",
         "password": null,
- 
-        "database": "",
- 
-        "host": "",
- 
+        "database": "myspaces",
+        "host": "127.0.0.1",
         "dialect": "mysql"
- 
     },
  
     "production": {
  
-        "username": "",
- 
+        "username": "root",
         "password": null,
- 
-        "database": "",
- 
+        "database": "myspaces",
         "host": "127.0.0.1",
- 
         "dialect": "mysql"
  
     }
