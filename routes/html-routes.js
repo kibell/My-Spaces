@@ -10,67 +10,55 @@ module.exports = function(app, passport) {
   
 
   app.get("/", function(req, res) {
-    res.render('index.handlebars')
+    res.render("index",res)
   });
 
-
-
-  app.get("/dashboard",   function(req, res, next) {
+  app.get("/home",   function(req, res, next) {
       console.log("logged in!!!")
-    res.send("../public/dashboard.html")
-  });
-
-
-  app.get("/register", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/register.html"));
+    res.render("home", res)
   });
 
   app.get("/login", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.render("index",res)
   });
 
 
+  app.post('/register', passport.authenticate('local-register', {
+    successRedirect: '/home',
 
-
-//   app.post('/register', passport.authenticate('local-register', {
-//     successRedirect: '/dashboard',
-
-//     failureRedirect: '/register'
-// }
+    failureRedirect: '/'
+   }
 
 
 
 
 
-// ));
+));
 
-// app.post('/login', passport.authenticate('local-login', {
+  app.post('/login', passport.authenticate('local-login', {
    
    
-//     successRedirect: '/dashboard',
+    successRedirect: '/home',
 
-//     failureRedirect: '/login',
+    failureRedirect: '/',
 
-//     failureFlash: true 
-// }
+    failureFlash: true 
+    }
 
-// ));
+   ));
 
 
 
-// app.get('/logout',function(req, res){
+  app.get('/logout',function(req, res){
    
  
-//         req.session.destroy(function(err) {
+    req.session.destroy(function(err) {
      
-//             res.redirect('/');
+        res.redirect('/');
      
-//         });
+   });
      
-
-
-// })
-
+})
 
 
 
@@ -78,18 +66,15 @@ module.exports = function(app, passport) {
 
 
 
-// function isLoggedIn(req, res, next) {
+   function isLoggedIn(req, res, next) {
  
-//     if (req.authenticated){
+      if (req.authenticated){
 
-//         return next();
-//     }
+     return next();
+     }
 
-//     res.redirect('/login');
-
-// }
-
-
+    res.redirect('/home');
+    }
 
 }
 
