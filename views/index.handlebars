@@ -13,10 +13,10 @@
 
                 <div class="register-background login-body">
             <div class="container mt-4">
-                <form class="register-form" id="register" name="register" method="post" action="/register">
+                <form  id="register" name="register" class="register-form"  method="post" action="/register">
                     <div class="form-group">
-                        <label for="email">Email address</label>
-                        <input type="email" name="email" class="form-control text" id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <label for="email-input">Email address</label>
+                        <input type="email" name="email" class="form-control text" id="email-input" aria-describedby="emailHelp">
                         <label for="password-input">Password</label>
                         <input type="password" name="password" class="form-control" id="password-input" placeholder="Password">
                         <label for="firstname-input">First Name</label>
@@ -49,11 +49,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="login-form" class="form-group">
-                        <label for="userEmail"></label>
-                        <input type="text" class="form-control" id="userEmail-signin" placeholder=" Email">
-                        <label for="password"></label>
-                        <input type="password" class="form-control" id="password-signin" placeholder="Password">
+                    <form id="login" class="form-group" name="login" method="post" action="/login">
+                        <label for="userEmail-login"></label>
+                        <input type="text" name="email" class="form-control" id="userEmail-login" placeholder=" Email">
+                        <label for="password-login"></label>
+                        <input type="password" name="password" class="form-control" id="password-login" placeholder="Password">
                     </form>
 
                     <!-- showing error to client -->
@@ -68,4 +68,8 @@
         </div>
     </div>
 
- 
+
+
+
+
+
