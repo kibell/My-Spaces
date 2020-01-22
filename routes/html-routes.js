@@ -15,7 +15,7 @@ module.exports = function(app, passport) {
 
 
 
-  app.get("/dashboard", isLoggedIn,  function(req, res, next) {
+  app.get("/dashboard",   function(req, res, next) {
       console.log("logged in!!!")
     res.send("../public/dashboard.html")
   });
@@ -32,44 +32,44 @@ module.exports = function(app, passport) {
 
 
 
-  app.post('/register', passport.authenticate('local-register', {
-    successRedirect: '/dashboard',
+//   app.post('/register', passport.authenticate('local-register', {
+//     successRedirect: '/dashboard',
 
-    failureRedirect: '/register'
-}
-
-
+//     failureRedirect: '/register'
+// }
 
 
 
-));
 
-app.post('/login', passport.authenticate('local-login', {
+
+// ));
+
+// app.post('/login', passport.authenticate('local-login', {
    
    
-    successRedirect: '/dashboard',
+//     successRedirect: '/dashboard',
 
-    failureRedirect: '/login',
+//     failureRedirect: '/login',
 
-    failureFlash: true 
-}
+//     failureFlash: true 
+// }
 
-));
+// ));
 
 
 
-app.get('/logout',function(req, res){
+// app.get('/logout',function(req, res){
    
  
-        req.session.destroy(function(err) {
+//         req.session.destroy(function(err) {
      
-            res.redirect('/');
+//             res.redirect('/');
      
-        });
+//         });
      
 
 
-})
+// })
 
 
 
@@ -78,16 +78,16 @@ app.get('/logout',function(req, res){
 
 
 
-function isLoggedIn(req, res, next) {
+// function isLoggedIn(req, res, next) {
  
-    if (req.authenticated){
+//     if (req.authenticated){
 
-        return next();
-    }
+//         return next();
+//     }
 
-    res.redirect('/login');
+//     res.redirect('/login');
 
-}
+// }
 
 
 

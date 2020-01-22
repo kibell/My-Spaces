@@ -1,12 +1,28 @@
 
 
+//For handlebars
+// *****************************************************************************
+// Server.js - This file is the initial starting point for the Node/Express server.
+//
+// ******************************************************************************
+// *** Dependencies
+// =============================================================
+const express = require("express");
+const methodOverride = require("method-override");
+const exphbs = require("express-handlebars");
+
+
+
+const app = express();
 const PORT = process.env.PORT || 8000;
+
 const passport = require('passport')
 const flash = require('express-flash')
 const session = require('express-session')
 const env = require('dotenv')
 //Models
 const models = require("./models")
+
 
 
 
@@ -29,19 +45,8 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
 
-const app = express();
 
 
-//For handlebars
-// *****************************************************************************
-// Server.js - This file is the initial starting point for the Node/Express server.
-//
-// ******************************************************************************
-// *** Dependencies
-// =============================================================
-const express = require("express");
-const methodOverride = require("method-override");
-const exphbs = require("express-handlebars");
 
 // Sets up the Express App
 // =============================================================
@@ -60,11 +65,6 @@ app.use(methodOverride("_method"));
 // Static directory
 app.use(express.static(__dirname +'/public'));
 
-<<<<<<< HEAD
-
-=======
-// Set Handlebars.
->>>>>>> dbadf546777b35c549011cfcf5e35965c16bf581
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
@@ -74,20 +74,20 @@ require("./routes/html-routes.js")(app,passport);
 
 
 //Sync Database
-models.sequelize.sync().then(function() {
+// models.sequelize.sync().then(function() {
  
-    console.log('Nice!')
+//     console.log('Nice!')
  
-}).catch(function(err) {
+// }).catch(function(err) {
  
-    console.log(err, "Something went wrong with the Database Update!")
+//     console.log(err, "Something went wrong with the Database Update!")
  
-});
+// });
 
 
-app.listen(PORT, function() {
-  console.log("Listening on port", PORT);
-});
+// app.listen(PORT, function() {
+//   console.log("Listening on port", PORT);
+// });
 
 
 
