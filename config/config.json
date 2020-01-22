@@ -6,7 +6,7 @@
  
         "password": "@hokageKB1",
  
-        "database": "sequelize_passport",
+        "database": "my_spaces",
  
         "host": "127.0.0.1",
  
