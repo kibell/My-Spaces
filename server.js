@@ -41,7 +41,7 @@ const app = express();
 // =============================================================
 const express = require("express");
 const methodOverride = require("method-override");
-const exphbs = require ("express-handlebars");
+const exphbs = require("express-handlebars");
 
 // Sets up the Express App
 // =============================================================
@@ -58,9 +58,13 @@ app.use(express.json());
 app.use(methodOverride("_method"));
 
 // Static directory
-app.use(express.static("public"));
+app.use(express.static(__dirname +'/public'));
 
+<<<<<<< HEAD
 
+=======
+// Set Handlebars.
+>>>>>>> dbadf546777b35c549011cfcf5e35965c16bf581
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
@@ -92,8 +96,8 @@ app.listen(PORT, function() {
 // Routes
 // =============================================================
 require("./routes/html-routes.js")(app);
-require("./routes/author-api-routes.js")(app);
-require("./routes/post-api-routes.js")(app);
+require("./routes/items-api-routes.js")(app);
+require("./routes/storage-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
