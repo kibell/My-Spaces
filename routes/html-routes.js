@@ -22,61 +22,61 @@ module.exports = function(app, passport) {
     res.render("index",res)
   });
 
-
-  app.post('/register', passport.authenticate('local-register', {
-    successRedirect: '/home',
-
-    failureRedirect: '/'
-   }
-
-
-
-
-
-));
-
-  app.post('/login', passport.authenticate('local-login', {
-   
-   
-    successRedirect: '/home',
-
-    failureRedirect: '/',
-
-    failureFlash: true 
-    }
-
-   ));
-
-
-
-  app.get('/logout',function(req, res){
-   
- 
-    req.session.destroy(function(err) {
-     
-        res.redirect('/');
-     
-   });
-     
-})
-
-
-
-
-
-
-
-   function isLoggedIn(req, res, next) {
- 
-      if (req.authenticated){
-
-     return next();
-     }
-
-    res.redirect('/home');
-    }
-
 }
+//   app.post('/register', passport.authenticate('local-register', {
+//     successRedirect: '/home',
+
+//     failureRedirect: '/'
+//    }
+
+
+
+
+
+// ));
+
+//   app.post('/login', passport.authenticate('local-login', {
+   
+   
+//     successRedirect: '/home',
+
+//     failureRedirect: '/',
+
+//     failureFlash: true 
+//     }
+
+//    ));
+
+
+
+//   app.get('/logout',function(req, res){
+   
+ 
+//     req.session.destroy(function(err) {
+     
+//         res.redirect('/');
+     
+//    });
+     
+// })
+
+
+
+
+
+
+
+//    function isLoggedIn(req, res, next) {
+ 
+//       if (req.authenticated){
+
+//      return next();
+//      }
+
+//     res.redirect('/home');
+//     }
+
+// }
 
 
 
