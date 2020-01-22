@@ -10,7 +10,7 @@ module.exports = function(app, passport) {
   
 
   app.get("/", function(req, res) {
-    res.render('index.html')
+    res.render('index.handlebars')
   });
 
 
