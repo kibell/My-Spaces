@@ -24,7 +24,9 @@ app.use(express.json());
 app.use(methodOverride("_method"));
 
 // Static directory
-app.use(express.static("public"));
+app.use(express.static(__dirname +'/public'));
+
+// Set Handlebars.
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
