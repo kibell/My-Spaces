@@ -29,6 +29,8 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 
 
+const app = express();
+
 
 //For handlebars
 // *****************************************************************************
