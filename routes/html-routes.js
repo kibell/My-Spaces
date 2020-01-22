@@ -14,27 +14,34 @@ module.exports = function(app) {
 
   // login route loads login.html
   app.get("/login", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    res.render("index", res);
   });
 
   // index route loads home.html
-  app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
-  });
+  // app.get("/", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/home.html"));
+  // });
 
   // storage route loads storage.html
   app.get("/storage", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/storage.html"));
+    res.render("storage", res);
   });
 
   // home route loads home.html
-  app.get("/home", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
-  });
+  // app.get("/home", function(req, res) {
+  //   res.sendFile(path.join(__dirname, "../public/home.html"));
+  // });
 
   // items route loads itemsList.html
   app.get("/itemsList", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/itemsList.html"));
+    res.render("item-list", res);
   });
 
 };
+
+
+module.exports = function(app) {
+  app.get("/storage", function(req, res) {
+    res.render("storage", res);
+  });
+ }
