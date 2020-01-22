@@ -7,6 +7,7 @@
 const express = require("express");
 const methodOverride = require("method-override");
 const exphbs = require("express-handlebars");
+const path = require('path');
 
 // Sets up the Express App
 // =============================================================

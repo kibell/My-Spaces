@@ -29,7 +29,7 @@ module.exports = function(app) {
 
   // home route loads home.html
   app.get("/home", function(req, res) {
-    res.sendFile(path.join(__dirname, "../public/home.html"));
+    res.render("home",res);
   });
 
   // items route loads itemsList.html
