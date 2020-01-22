@@ -370,6 +370,31 @@ html, body {
        color: #777;
 }
 
+/* resigter  */
+
+.register-background {
+    height: 95vh;
+    background-image: url(../img/3.jpg);
+    background-size: cover;
+    background-position: top;
+    position: relative;
+    margin: 15px 30px 15px 30px;
+
+}
+
+.register-form {
+   height: 500px;
+   width: 350px;
+   position: absolute;
+   top:60%;
+   left:50%;
+   transform: translate(-50%,-50%);
+}
+
+#boldFont {
+    font-weight: bolder;
+  }
+
 
 
 
