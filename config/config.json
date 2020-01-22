@@ -1,27 +1,47 @@
 {
+ 
     "development": {
-      "username": "root",
-      "password": null,
-      "database": "myspaces",
-      "host": "127.0.0.1",
-      "dialect": "mysql",
-      "operatorsAliases": false
+ 
+        "username": "root",
+ 
+        "password": "@hokageKB1",
+ 
+        "database": "sequelize_passport",
+ 
+        "host": "127.0.0.1",
+ 
+        "dialect": "mysql"
+ 
     },
+ 
     "test": {
-      "username": "root",
-      "password": null,
-      "database": "myspaces",
-      "host": "127.0.0.1",
-      "dialect": "mysql",
-      "operatorsAliases": false
+ 
+        "username": "",
+ 
+        "password": null,
+ 
+        "database": "",
+ 
+        "host": "",
+ 
+        "dialect": "mysql"
+ 
     },
+ 
     "production": {
-      "username": "root",
-      "password": null,
-      "database": "myspaces",
-      "host": "127.0.0.1",
-      "dialect": "mysql",
-      "operatorsAliases": false
+ 
+        "username": "",
+ 
+        "password": null,
+ 
+        "database": "",
+ 
+        "host": "127.0.0.1",
+ 
+        "dialect": "mysql"
+ 
     }
-  }
+}
+ 
+
   
