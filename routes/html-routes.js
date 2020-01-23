@@ -24,6 +24,9 @@ module.exports = function(app, passport) {
     res.render("login.handlebars",res)
   });
 
+}
+//   app.post('/register', passport.authenticate('local-register', {
+//     successRedirect: '/home',
 
 
 //  app.post('/login',
@@ -48,32 +51,33 @@ module.exports = function(app, passport) {
 
 
 
-));
 
-  app.post('/login', passport.authenticate('local-login', {
+// ));
+
+//   app.post('/login', passport.authenticate('local-login', {
    
    
-    successRedirect: '/home',
+//     successRedirect: '/home',
 
-    failureRedirect: '/',
+//     failureRedirect: '/',
 
-    failureFlash: true 
-    }
+//     failureFlash: true 
+//     }
 
-   ));
+//    ));
 
 
 
-  app.get('/logout',function(req, res){
+//   app.get('/logout',function(req, res){
    
  
-    req.session.destroy(function(err) {
+//     req.session.destroy(function(err) {
      
-        res.redirect('/');
+//         res.redirect('/');
      
-   });
+//    });
      
-})
+// })
 
 
 
@@ -90,6 +94,7 @@ function ensureAuthentication(req, res, next) {
   }
 
  }
+
 
 
 
