@@ -382,18 +382,37 @@ html, body {
 
 }
 
-.register-form {
-   height: 500px;
-   width: 350px;
-   position: absolute;
-   top:60%;
-   left:50%;
-   transform: translate(-50%,-50%);
-}
+.register-form-card {
+    height: 500px;
+    width: 350px;
+    position: absolute;
+    top:51%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    background-color: transparent;
+ }
 
-#boldFont {
+ #boldFont {
     font-weight: bolder;
   }
+
+ 
+ .register-container {
+     height: 100% !important;
+ }
+ 
+ #button-signup {
+     background-color: #7A92B3;
+     color: #fff;
+     border-radius: 100px;
+ }
+ 
+ #modal-button-login {
+     background-color: #7A92B3;
+     color:white;
+     border-radius: 100px;
+ }
+
 
 
 
