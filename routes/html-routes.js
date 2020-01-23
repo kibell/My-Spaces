@@ -10,23 +10,37 @@ module.exports = function(app, passport) {
   
 
   app.get("/", function(req, res) {
-    res.render("index",res)
+    res.render("index.handlebars",res)
   });
 
-  app.get("/home",   function(req, res, next) {
+  
+  app.get("/home", ensureAuthentication, function(req, res, next) {
       console.log("logged in!!!")
     res.render("home", res)
   });
 
   app.get("/login", function(req, res) {
-    res.render("index",res)
+    res.render("login.handlebars",res)
   });
 
 
-  app.post('/register', passport.authenticate('local-register', {
-    successRedirect: '/home',
 
-    failureRedirect: '/'
+//  app.post('/login',
+//   passport.authenticate('local-login'),
+//   function(req, res) {
+//     // If this function gets called, authentication was successful.
+//     // `req.user` contains the authenticated user.
+//     res.redirect('/');
+//   });
+
+
+
+  app.post('/register', passport.authenticate('local-register', {
+    successRedirect: '/login',
+
+    failureRedirect: '/',
+
+    failureFlash: true 
    }
 
 
@@ -40,7 +54,7 @@ module.exports = function(app, passport) {
    
     successRedirect: '/home',
 
-    failureRedirect: '/',
+    failureRedirect: '/login',
 
     failureFlash: true 
     }
@@ -60,31 +74,21 @@ module.exports = function(app, passport) {
      
 })
 
-<<<<<<< HEAD
-// })
-
-
-
-// function isLoggedIn(req, res, next) {
-=======
 
 
 
 
 
 
-   function isLoggedIn(req, res, next) {
->>>>>>> b224495c5546c9fcef7780d2428f7f7aa17dfc4e
- 
-      if (req.authenticated){
-
-     return next();
-     }
-
-    res.redirect('/home');
+function ensureAuthentication(req, res, next) {
+    if (req.isAuthenticated()) {
+       return next();
+       } else {
+      //user is not logged in
     }
+  }
 
-}
+ }
 
 
 

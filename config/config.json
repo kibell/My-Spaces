@@ -3,16 +3,8 @@
     "development": {
  
         "username": "root",
-<<<<<<< HEAD
- 
         "password": "@hokageKB1",
- 
-        "database": "my_spaces",
- 
-=======
-        "password": null,
         "database": "myspaces",
->>>>>>> b224495c5546c9fcef7780d2428f7f7aa17dfc4e
         "host": "127.0.0.1",
         "dialect": "mysql"
  
