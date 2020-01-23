@@ -36,7 +36,7 @@ module.exports = function(app, passport) {
 
 
   app.post('/register', passport.authenticate('local-register', {
-    successRedirect: '/login',
+    successRedirect: '/home',
 
     failureRedirect: '/',
 
@@ -54,7 +54,7 @@ module.exports = function(app, passport) {
    
     successRedirect: '/home',
 
-    failureRedirect: '/login',
+    failureRedirect: '/',
 
     failureFlash: true 
     }
