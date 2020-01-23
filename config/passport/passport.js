@@ -1,16 +1,13 @@
-const bCrypt = require('bcrypt-nodejs')
-
-
- 
-
-
+//load bcrypt
+var bCrypt = require('bcrypt-nodejs');
  
  
 module.exports = function(passport, user) {
-    const User = user;
-    
-   
-    const LocalStrategy = require('passport-local').Strategy;
+ 
+ 
+    var User = user;
+ 
+    var LocalStrategy = require('passport-local').Strategy;
  
  
     passport.use('local-register', new LocalStrategy(
@@ -29,7 +26,7 @@ module.exports = function(passport, user) {
  
         function(req, email, password, done) {
  
-            const generateHash = function(password) {
+            var generateHash = function(password) {
  
                 return bCrypt.hashSync(password, bCrypt.genSaltSync(8), null);
  
@@ -55,9 +52,9 @@ module.exports = function(passport, user) {
  
                 {
  
-                    const userPassword = generateHash(password);
+                    var userPassword = generateHash(password);
  
-                    const data =
+                    var data =
  
                         {
                             email: email,
@@ -93,28 +90,9 @@ module.exports = function(passport, user) {
         }
  
     ));
-    //serialize
-passport.serializeUser(function(user, done) {
- 
-    done(null, user.id);
- 
-});
-
-// deserialize user 
-
-passport.deserializeUser(function(id, done) {
-    User.findByPk(id, function(err, user) {
-        done(err, user);
-    });
-});
  
 
- 
-
-
-//Local Login
-
-
+//LOCAL SIGNIN
 passport.use('local-login', new LocalStrategy(
  
     {
@@ -132,9 +110,9 @@ passport.use('local-login', new LocalStrategy(
  
     function(req, email, password, done) {
  
-        const User = user;
+        var User = user;
  
-        const isValidPassword = function(userpass, password) {
+        var isValidPassword = function(userpass, password) {
  
             return bCrypt.compareSync(password, userpass);
  
@@ -163,7 +141,7 @@ passport.use('local-login', new LocalStrategy(
             }
  
  
-            const userinfo = user.get();
+            var userinfo = user.get();
             return done(null, userinfo);
  
  
@@ -181,5 +159,32 @@ passport.use('local-login', new LocalStrategy(
     }
  
 ));
+
+//serialize
+passport.serializeUser(function(user, done) {
+ 
+    done(null, user.id);
+ 
+});
+
+
+// deserialize user 
+passport.deserializeUser(function(id, done) {
+ 
+    User.findByPk(id).then(function(user) {
+ 
+        if (user) {
+ 
+            done(null, user.get());
+ 
+        } else {
+ 
+            done(user.errors, null);
+ 
+        }
+ 
+    });
+ 
+});
 
 }
