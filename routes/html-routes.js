@@ -9,7 +9,7 @@ module.exports = function(app, passport) {
   });
   app.get("/home", ensureAuthentication, function(req, res, next) {
       console.log("logged in!!!")
-    res.render("home", {firstname: req.user.firstname, lastname: req.user.lastname})
+    res.render("home.handlebars", {firstname: req.user.firstname, lastname: req.user.lastname})
   });
   app.get("/index", function(req, res) {
     res.render("index.handlebars",res)
