@@ -25,8 +25,11 @@ const models = require("./models")
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> c6e14418ba83c2c5e805bf2c32e62a13bdb9fac9
 // Parse application body
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
