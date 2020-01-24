@@ -42,10 +42,10 @@ module.exports = function(app, passport) {
 //   app.post('/register', passport.authenticate('local-register', {
 //     successRedirect: '/home',
 
-    failureRedirect: '/',
+  //   failureRedirect: '/',
 
-    failureFlash: true 
-   }
+  //   failureFlash: true 
+  //  })
 
 
 
@@ -93,7 +93,7 @@ function ensureAuthentication(req, res, next) {
     }
   }
 
- }
+ 
 
 
 
