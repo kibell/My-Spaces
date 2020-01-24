@@ -22,43 +22,46 @@ module.exports = function(app, passport) {
     res.render("index",res)
   });
 
+  app.get("/register", function(req, res) {
+    res.render("index",res)
+  });
 
-  app.post('/register', passport.authenticate('local-register', {
-    successRedirect: '/home',
+//   app.post('/register', passport.authenticate('local-register', {
+//     successRedirect: '/home',
 
-    failureRedirect: '/'
-   }
-
-
+//     failureRedirect: '/'
+//    }
 
 
 
-));
 
-  app.post('/login', passport.authenticate('local-login', {
+
+// ));
+
+//   app.post('/login', passport.authenticate('local-login', {
    
    
-    successRedirect: '/home',
+//     successRedirect: '/home',
 
-    failureRedirect: '/',
+//     failureRedirect: '/',
 
-    failureFlash: true 
-    }
+//     failureFlash: true 
+//     }
 
-   ));
+//    ));
 
 
 
-  app.get('/logout',function(req, res){
+//   app.get('/logout',function(req, res){
    
  
-    req.session.destroy(function(err) {
+//     req.session.destroy(function(err) {
      
-        res.redirect('/');
+//         res.redirect('/');
      
-   });
+//    });
      
-})
+// })
 
 
 
