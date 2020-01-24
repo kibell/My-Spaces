@@ -46,9 +46,3 @@ function ensureAuthentication(req, res, next) {
     }
   }
  }
-
-
-
-
-
-

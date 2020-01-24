@@ -89,9 +89,27 @@
                             <div class="col-md-6">
                                 <div class="row">
                                     <div class="col-md-12">
+
                                         <a href="#" type="submit"  data-toggle="modal" data-target="#area-modal"><i class="fas fa-plus icone-spaces"></i></a>
                                         <br>
+                                        	<div class="area-container">
+					
                                          <span class="title-area">add areas</span>
+                                         
+					                        <table class="table table-striped">
+                                                
+								
+							                       
+						</thead>
+						<tbody>
+							<tr id="form-row-main">
+								<form class="area-form">
+									<td colspan="4">
+									
+								</form>
+							</tr>
+						</tbody>
+					</table>
                                     </div>
                                 </div>                                
                             </div>
@@ -110,13 +128,27 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="area" name="login" method="post" action="/login">
-                         <input type="text" name="input" class="form-control" id="area-input" >
-                        
-                <div class="modal-footer">
-                <button type="reset" class="btn btn-secondary" id="close" data-dismiss="modal">Close</button>
-              
-                    </form>
+                   <h1>Areas</h1>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Name</th>
+								
+							</tr>
+						</thead>
+						<tbody>
+							<tr id="form-row">
+								<form class="area-form">
+									<td colspan="4">
+										<input placeholder="Enter a name" id="area-input" type="text" />
+									</td>
+									<td><button type="submit" class="btn btn-success ">Create Area</button>
+									</td>
+								</form>
+							</tr>
+						</tbody>
+					</table>
+				</div>
                 </div>
             </div>
         </div>
@@ -343,13 +375,7 @@
             </div> --}}
 </div>
       
-<<<<<<< HEAD
 
-        <form id="area" name="area" method="post" action="/api/areas">
-                         <label for="areaname">Areas</label>
-                         <input class="text" name="areaname" type="text" />
-                         <input type="submit" class="btn btn-primary" id="login-button" value="area" /> 
-        </form>
       {{!-- <!-- Modal -->
   <div class="modal fade org-spaces" id="org-spaces-modal" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -435,8 +461,6 @@
         </div>
     </nav> --}}
 
-=======
->>>>>>> 33a12c45d15772d02a82671b4d5f482947d3a340
     <!-- Footer -->
 <footer class="page-footer font-small footer">
 
