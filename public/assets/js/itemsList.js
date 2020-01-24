@@ -1,6 +1,7 @@
 
+
 // define one array for items
-const itemsArray = ["sessoir", "book", "plate", "movie colloction"]
+const itemsArray = ["pen", "book", "plate", "movie colloction"]
 
 
 //define a function which render new button for items
@@ -9,12 +10,10 @@ function renderItems () {
     $("#items-view").empty();
 
     for (let i=0; i<itemsArray.length; i++) {
-        const bt = $("<div class = list-item id=more-items>");
+        const bt = $('<div>').addClass(' btn button-drag list-item').attr('id',`more-items${i}`);
         bt.attr("draggable","true")
-        // bt.addClass("btn-warning")
-        // bt.addClass("list-item")
         bt.text(itemsArray[i]);
-        $("#items-view").append(bt)
+        $("#items-view").append(bt);
     }
 }
 
@@ -25,65 +24,57 @@ $("#add-item-button").on("click", function(event){
 
     const newItem = $("#new-item-input").val().trim();
     itemsArray.push(newItem);
-    // $.ajax("/api/item", {
-    //     type: "POST",
-    //     data: newItem
-    // }).then(
-    //     function(){
-    //         console.log("let see new item");
-    //         location.reload();
-    //     }
-    // );
+
     renderItems();
 })
 
-const itemList = $(".list-item")
-const itemArea = $(".list")
+
+const itemList = $(".items-list");
+const itemArea = $(".list");
 
 let draggedItem = null;
 
-for (let i = 0; i < itemList.length; i++) {
-	const item = itemList[i];
+// You can apply an event listener to more than one element without a loop
+// this will refer to the element being acted upon
+// Can't attach events to items that don't exist on run time,
+// have to attach the event to a parent element, then filter on the child element
+$('.items-list').on('dragstart', '.list-item', function(e) {
+  // consoles refactored to show in the black box for jFiddle
+  e.originalEvent.dataTransfer.setData("text", $(this).attr('id'));
+    console.log('dragstart!!!!');
 
-	item.addEventListener('dragstart', function () {
-        console.log("dragstart!!!")
-		draggedItem = item;
-		// setTimeout(function () {
-		// 	item.style.display = 'none';
-		// }, 0)
-	});
+    draggedItem = $(this);
+    console.log(draggedItem);
+});
+$('.items-list').on('dragend', '.list-item', function(e) {
+    e.preventDefault();
+    console.log( e.preventDefault())
+    console.log('DRAGEND!!!!');
 
-	item.addEventListener('dragend', function () {
-        console.log("dragend!!!")
-        draggedItem = null;
-		// setTimeout(function () {
-		// 	draggedItem.style.display = 'block';
-		// 	draggedItem = null;
-		// }, 0);
-	})
+});
+$('.list').on('dragover', function(e) {
+    e.preventDefault(); 
+    console.log('<p>DRAG OVER!!!!</p>');
+});
+$('.list').on('dragenter', function(e) {
+  e.preventDefault(); 
+  console.log('<p> DRAG ENTER!!!!</p>');
+  $(this).css('background-color', 'rgba(0,0,0,.2)');
+});
+$('.list').on('dragleave', function(e) {
+  e.preventDefault(); 
+  console.log(' DRAG LEAVE!!!!');
+  $(this).css('background-color', 'transparent');
+});
+$('.list').on('drop', function(e) {
+  console.log(e);
+  e.preventDefault(); 
+  console.log('drop');
+  $('.console').append('<p> DROP </p>');
+  $(this).append(draggedItem);
+  console.log(draggedItem);
+  $(this).css('background-color', 'transparent');
+  draggedItem = null;
+}); 
 
-	for (let j = 0; j < itemArea; j ++) {
-		const list = itemArea[j];
-
-		list.addEventListener('dragover', function (e) {
-			e.preventDefault();
-		});
-		
-		list.addEventListener('dragenter', function (e) {
-			e.preventDefault();
-			this.style.backgroundColor = 'rgba(0, 0, 0, 0.2)';
-		});
-
-		list.addEventListener('dragleave', function (e) {
-			this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
-		});
-
-		list.addEventListener('drop', function (e) {
-			console.log('drop');
-			this.append(draggedItem);
-			this.style.backgroundColor = 'rgba(0, 0, 0, 0.1)';
-		});
-	}
-}
-
- renderItems();
+renderItems();

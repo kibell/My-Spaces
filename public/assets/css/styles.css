@@ -583,4 +583,34 @@ height: 100% !important;
 
 }
 
+#add-item-button {
+
+    background-color:rgba(23, 44, 73, 0.774);
+    color:white;
+    border-radius: 50px;
+    padding:10px;
+    font-size: 20px;
+    margin:0 15px 15px 15px;
+    min-width: 200px;
+}
+
+.button-drag {
+    background-color:rgba(37, 65, 104, 0.774);
+    color:white;
+    border: solid rgb(52, 113, 197);
+    border-radius: 50px;
+    padding:10px;
+    margin:15px 15px 15px 15px;
+    min-width: 120px;
+}
+
+.list {
+    background: transparent;
+    border: 2px solid rgba(20, 50, 93, 0.774);
+    border-radius: 15px;
+    margin: 20px;
+    flex-grow: 1;
+    min-height:85vh;
+  }
+
 
