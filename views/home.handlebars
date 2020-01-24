@@ -82,7 +82,46 @@
                 </div>     
             </div>
             <div class="col-md-8"> 
-                <div class="card mb-3 card-area" >
+                 <div class="card mb-3 card-area" >
+                    <div class="card-header">Your spaces</div>
+                    <div class="card-body">
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <a href="#" type="submit"  data-toggle="modal" data-target="#area-modal"><i class="fas fa-plus icone-spaces"></i></a>
+                                        <br>
+                                         <span class="title-area">add areas</span>
+                                    </div>
+                                </div>                                
+                            </div>
+                        </div>
+                    </div>
+
+
+ <div class="modal fade modal-login" id="area-modal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signin-brand">Org Spaces</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="area" name="login" method="post" action="/login">
+                         <input type="text" name="input" class="form-control" id="area-input" >
+                        
+                <div class="modal-footer">
+                <button type="reset" class="btn btn-secondary" id="close" data-dismiss="modal">Close</button>
+              
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+                {{!-- <div class="card mb-3 card-area" >
                     <div class="card-header">Your spaces</div>
                     <div class="card-body">
                         <div class="row">
@@ -126,12 +165,12 @@
                             </div>
                         </div>
                     </div>      
-                </div>
+                </div> --}}
             </div>
         </div>
         	
     </div>
-            <!-- Modal for kitchen -->
+            {{!-- <!-- Modal for kitchen -->
         <div class="modal md-effect-8" id="modal-kitchen" tabindex="-1" role="dialog"
          aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog modal-md" role="document">
@@ -301,9 +340,10 @@
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
-            </div>
+            </div> --}}
 </div>
       
+<<<<<<< HEAD
 
         <form id="area" name="area" method="post" action="/api/areas">
                          <label for="areaname">Areas</label>
@@ -395,6 +435,8 @@
         </div>
     </nav> --}}
 
+=======
+>>>>>>> 33a12c45d15772d02a82671b4d5f482947d3a340
     <!-- Footer -->
 <footer class="page-footer font-small footer">
 
