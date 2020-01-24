@@ -6,15 +6,17 @@
 </head>
  
 <body>
-    <form id="login" name="login" method="post" action="/login">
+    {{!-- <form id="login" name="login" method="post" action="/login">
         <label for="email">Email Address</label>
         <input class="text" name="email" type="email" />
         <label for="password">Password</label>
         <input name="password" type="password" />
         <input class="btn" type="submit" value="login" />
-    </form>
+    </form> --}}
+
     
-    <form id="register" name="register" method="post" action="/register">
+    
+    {{!-- <form id="register" name="register" method="post" action="/register">
         <label for="email">Email Address</label>
         <input class="text" name="email" type="email" />
         <label for="firstname">Firstname</label>
@@ -24,7 +26,98 @@
         <label for="password">Password</label>
         <input name="password" type="password" />
         <input class="btn" type="submit" value="register" />
-    </form>
+    </form> --}}
 </body>
  
 </html>
+
+            <header class="header">
+                <div class="text-box">
+                    <h1 class="heading-primary">
+                        <span class="heading-primary-main">org spaces</span>
+                        <span class="heading-primary-sub">is where you can find your items</span>
+                    </h1>
+                    <a href="#login" class="btn btn-white"> Create Your Account</a>
+                </div>
+            </header> 
+        </div>
+
+        <!--sign up -->
+        <div class="register-background login-body">
+            <div class="container register-container mt-4">
+                <div class="card register-form-card">
+                    <div class="card-header">
+                        <h3>Sign up</h3>
+                    </div>
+                    <div class="card-body">
+
+                        <form class="register-form" id="register" name="register" method="post" action="/register">
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                </div>
+
+                                <input type="text" name="firstname" class="form-control" id="fullname-input" placeholder="First Name">
+                                   <input type="text" name="lastname" class="form-control" id="fullname-input" placeholder="Last Name">
+                            </div>
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="far fa-envelope"></i></span>
+                                </div>
+                                 <input type="email" name="email" class="form-control text" id="email-input" placeholder="Email address" aria-describedby="emailHelp"> 
+                            </div>
+                            <div class="input-group form-group">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                </div>
+                                <input type="password" name="password" class="form-control" id="password-input" placeholder="Password">
+                            </div>
+                                <p id="terms">By signing up, you agree to out <span id="boldFont">Terms, Data Policy, and Cookies Policy </span>.
+                                </p>
+                            <div class="form-group">
+                                <button type="submit" value="register" class="btn float-right login_btn"> Sign Up </button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer">
+                        <div class="d-flex justify-content-center links">
+                            <button type="button" class="btn btn-success modal-button" data-toggle="modal" data-target="#login-modal">
+                                Have an account? Login
+                            </button>
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            <a href="#">Forgot your password?</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <!-- Modal -->
+    <div class="modal fade modal-login" id="login-modal" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog modal-md" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="signin-brand">Org Spaces</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="login" name="login" method="post" action="/login">
+                         <label for="email">Email Address</label>
+                         <input class="text" name="email" type="email" />
+                         <label for="password">Password</label>
+                         <input name="password" type="password" />
+                      
+    
+                    <!-- showing error to client -->
+                    <div class="message-login"></div>
+                </div>
+                <div class="modal-footer">
+                <button type="reset" class="btn btn-secondary" id="close" data-dismiss="modal">Close</button>
+                <input type="submit" class="btn btn-primary" id="login-button" value="Login" /> 
+                </form>
+                </div>
+            </div>
+        </div>

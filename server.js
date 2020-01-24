@@ -10,7 +10,6 @@
 const express = require("express");
 const methodOverride = require("method-override");
 const exphbs = require("express-handlebars");
-const path = require('path');
 
 
 
@@ -44,7 +43,7 @@ saveUninitialized:true})); // session secret
 
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
-
+app.use(flash());
 
 
 
@@ -70,42 +69,21 @@ app.use(express.static(__dirname +'/public'));
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
-require("./routes/html-routes.js")(app,passport);
-
-
-
-//Sync Database
-// models.sequelize.sync().then(function() {
- 
-//     console.log('Nice!')
- 
-// }).catch(function(err) {
- 
-//     console.log(err, "Something went wrong with the Database Update!")
- 
-// });
-
-
-// app.listen(PORT, function() {
-//   console.log("Listening on port", PORT);
-// });
-
-
-
-
+//
 
 // Routes
 // =============================================================
-require("./routes/html-routes.js")(app);
+require("./routes/html-routes.js")(app, passport);
 require("./routes/items-api-routes.js")(app);
 require("./routes/storage-api-routes.js")(app);
 
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-db.sequelize.sync({ force: true }).then(function() {
-  app.listen(PORT, function() {
-    console.log("App listening on PORT " + PORT);
-  });
-});
+    db.sequelize.sync({ force: true }).then(function() {
+      app.listen(PORT, function() {
+        console.log("App listening on PORT " + PORT);
+      });
+    });
+
 
 
