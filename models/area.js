@@ -1,18 +1,18 @@
 module.exports = function(sequelize, DataTypes) {
   
-    const Storage = sequelize.define("Storage", {
+    const Area = sequelize.define("Area", {
       // Giving the Storage model a name of type STRING
       name: DataTypes.STRING
     });
   
-    Storage.associate = function(models) {
+    Area.associate = function(models) {
       // Associating Storage with Items
       // When an Storage is deleted, also delete any associated Items
-      Storage.hasMany(models.Item, {
+      Area.hasMany(models.user, {
         onDelete: "cascade"
       });
     };
   
-    return Storage;
+    return Area;
   };
   

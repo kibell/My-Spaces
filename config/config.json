@@ -1,7 +1,6 @@
 {
  
     "development": {
-<<<<<<< HEAD
  
         "username": "root",
         "password": "@hokageKB1",
@@ -9,14 +8,6 @@
         "host": "127.0.0.1",
         "dialect": "mysql"
  
-=======
-      "username": "root",
-      "password": "root",
-      "database": "myspaces",
-      "host": "127.0.0.1",
-      "dialect": "mysql",
-      "operatorsAliases": false
->>>>>>> c6e14418ba83c2c5e805bf2c32e62a13bdb9fac9
     },
  
     "test": {

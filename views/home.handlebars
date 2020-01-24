@@ -65,7 +65,7 @@
                                       <h3>Profile Information</h3>
     
                                         
-                                         <p>Welcome!! {{firstname}} {{lastname}}</p>
+                                         <p>Welcome {{firstname}} {{lastname}}</p>
                                               
                                      </div>
                             </div>
@@ -290,9 +290,9 @@
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-12">
-                                <a href="#"><i class="fas fa-plus icone-spaces"></i></a>
+                                <a href=""><i class="fas fa-plus icone-spaces"></i></a>
                                 <br>
-                                <span class="title-area">add more storage</span>
+                                <span class="title-area">add Space</span>
                             </div>
                         </div>                                
                     </div>
@@ -305,7 +305,11 @@
 </div>
       
 
-        
+        <form id="area" name="area" method="post" action="/api/areas">
+                         <label for="areaname">Areas</label>
+                         <input class="text" name="areaname" type="text" />
+                         <input type="submit" class="btn btn-primary" id="login-button" value="area" /> 
+        </form>
       {{!-- <!-- Modal -->
   <div class="modal fade org-spaces" id="org-spaces-modal" tabindex="-1" role="dialog"
     aria-labelledby="exampleModalLongTitle" aria-hidden="true">
