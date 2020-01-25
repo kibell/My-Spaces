@@ -9,8 +9,14 @@ module.exports = function(sequelize, DataTypes) {
       // Associating Storage with Items
       // When an Storage is deleted, also delete any associated Items
       Storage.hasMany(models.Item, {
+        foreignKey: {
+        name: storage_id,
         onDelete: "cascade"
-      });
+      },
+    });
+      Storage.belongsTo(models.Area, {
+          allowNull: false
+        });
     return Storage;
   };
 }

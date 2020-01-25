@@ -15,8 +15,8 @@ module.exports = function(app) {
   // GET route for retrieving all of the item data from the DOM
   app.get("/api/items", function(req, res) {
     const query = {};
-    if (req.query.StorageId) {
-      query.StorageId = req.query.StorageId;
+    if (req.query) {
+      query.storage_id = req.query.id;
     }
     // 1. Add a join here to include all of the Storages to these Items
     db.Item.findAll({
