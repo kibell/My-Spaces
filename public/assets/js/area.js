@@ -1,5 +1,6 @@
 $(document).ready(function() {
     console.log("hey I WORK!!!!")
+     const areaArray = ["kitchen", "bathroom", "living room", "bedroom"];
     // Getting references to the name input and author container, as well as the table body
     const nameInput = $("#area-input");
     const areaList = $("tbody");
@@ -26,6 +27,18 @@ $(document).ready(function() {
           .trim()
       });
     }
+
+  //   function renderAreas () {
+
+  //     $(".area-part").empty();
+  
+  //     for (let i=0; i<areaArray.length; i++) {
+  //         const btArea = $('<img>').addClass("img-thumbnail").attr("src", );
+
+          
+  //         $(".area-part").append(btArea);
+  //     }
+  // }
   
     // A function for creating an author. Calls getareas upon completion
     function upsertArea(areaData) {
@@ -35,7 +48,7 @@ $(document).ready(function() {
   
     // Function for creating a new list row for areas
     function createAreaRow(areaData) {
-      const newTr = $("<div>");
+      const newTr = $("<img>");
       newTr.data("Area", areaData);
       newTr.append("<div>" + areaData.name + "</div>");
       if (areaData.user) {
