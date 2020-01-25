@@ -169,9 +169,9 @@ passport.serializeUser(function(user, done) {
 
 
 // deserialize user 
-passport.deserializeUser(function(id, done) {
+passport.deserializeUser(function(userId, done) {
  
-    User.findByPk(id).then(function(user) {
+    User.findByPk(userId).then(function(user) {
  
         if (user) {
  
