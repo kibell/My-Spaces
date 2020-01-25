@@ -42,52 +42,51 @@
 
         <!--mainpage-->
     <div class="container mt-4">
+          <!--profile part-->
         <div class="row mt-4">
                     <br>
-
-        <!--profile part-->
             <div class="col-md-4"> 
                 <div class="card card-profile" >
-                    
-                    <div class="card-header"></div>
-                   
+                    <div class="card-header">Your profile</div>
                     <div class="card-body">
-                            <div class='row'>
-                                <div class='col-lg-4 col-sm-2'>
-                                    
-                                </div>
-                                <div class='col-lg-4 col-sm-8'>
-                                    <div class="profile-userpic">
-                                    <i class="fas fa-user" id="user-icone"></i> 
-                                </div>
-                                </div>
-                                <div class='col-lg-4 col-sm-2'>
-                                    
-                                </div>
+                        <div class='row'>
+                            <div class='col-lg-4 col-sm-2'>
+                                
                             </div>
-                            <div class="profile-userpic">
+                            <div class='col-lg-4 col-sm-8'>
+                                <div class="profile-userpic">
                                 <i class="fas fa-user" id="user-icone"></i> 
                             </div>
+                            </div>
+                            <div class='col-lg-4 col-sm-2'>
+                                
+                            </div>
+                        </div>
+                            {{!-- <div class="profile-userpic">
+                                <i class="fas fa-user" id="user-icone"></i> 
+                            </div> --}}
                             <div class="profile-usertitle">
                                 <div class="profile-usertitle-name">
-                     
-                                      <h3>Profile Information</h3>
-    
-                                        
-                                         <p>Welcome {{firstname}} {{lastname}}</p>
-                                              
+                                    
+                                    <h3>Profile Information</h3>
+
+                                    
+                                    <p>Welcome {{firstname}} {{lastname}}</p>
+                                                            
                                 </div>
                             </div>
-
+                            <div class="profile-userbuttons">
+                                <button type="button" class="btn btn-info  btn-sm">Message</button>
+                            </div>
                             <div class="profile-usermenu">
                                 <span class="storage-item"> the items he or she store</span>
                                 <br>
                                 <span class="storage-spaces"> the spaces that her or she used</span>
                             </div>
-                            
                     </div>
                 </div>     
             </div>
+
 
              <!--spaces part-->
             <div class="col-md-8"> 
@@ -99,17 +98,15 @@
                                 <div class="row">
                                     <div class="col-md-12">
 
-                                        <a href="#" type="submit"  data-toggle="modal" data-target="#area-modal"><i class="fas fa-plus icone-spaces"></i></a>
-                                        <br>
-                                        	<div class="area-container">
-					
-                                         <span class="title-area">add areas</span>
-                                         
-					                        <table class="table table-striped">
+                            <a href="#" type="submit"  data-toggle="modal" data-target="#area-modal"><i class="fas fa-plus icone-spaces"></i></a>
+                            <br>
+                                <div class="area-container">
+        
+                            <span class="title-area">add areas</span>
+                            
+                                <table class="table table-striped">
                                                 
 								
-							                       
-						</thead>
 						<tbody>
 							<tr id="form-row-main">
 								<form class="area-form">
@@ -136,7 +133,7 @@
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body area-part">
                    <h1>Areas</h1>
 					<table class="table table-striped">
 						<thead>
@@ -382,7 +379,7 @@
                     </div>
                 </div>
             </div> --}}
-    </div>
+        </div>
       
 
       {{!-- <!-- Modal -->
