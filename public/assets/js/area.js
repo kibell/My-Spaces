@@ -39,7 +39,7 @@ $(document).ready(function() {
       newTr.data("Area", areaData);
       newTr.append("<div>" + areaData.name + "</div>");
       if (areaData.user) {
-        newTr.append("<div> " + areaData.user + "</div>");
+        newTr.append("<div> " + areaData.user.id + "</div>");
       } else {
         newTr.append("<td>0</td>");
       }
