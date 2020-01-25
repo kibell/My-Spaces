@@ -1,4 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
+  
     const Storage = sequelize.define("Storage", {
       // Giving the Storage model a name of type STRING
       name: DataTypes.STRING
