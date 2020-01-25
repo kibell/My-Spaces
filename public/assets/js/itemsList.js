@@ -6,7 +6,7 @@ $(document).ready(function() {
   const itemForm = $('#new-item');
   const itemBarcode = $('#barcode');
   // Creates a flag set initially to true if item is being created.
-  let isCreated = false;
+  let isUpdated = false;
   
   $('#add-item-button').on('click', function() {
   //Add an event listener for submitting 
@@ -31,16 +31,14 @@ $(document).ready(function() {
       barcode_id: itemId.val().trim(),
     }
     
-    if (isCreated) {
+        // If the item is being updated then run updateItem
+    if (isUpdated ) {
       newItem.id = itemId;
-      submitItem(newItem); 
+      updateItem(newItem); 
     } else { 
-      updateItem(newItem);
+      submitItem(newItem);
     }
-    })
-
-    // If the item is being updated then run updateItem
-
+  });
 
   function submitItem(item) {
     $.post("/api/items", item, function() {
@@ -75,17 +73,16 @@ $(document).ready(function() {
   $.get(queryURL, function(res) {
     if (res) {
       console.log(res.newItem.id || res.id); 
-      JsBarcode('#barcode', res.newItem.id || res.id, {
-        format: "pharmacode", 
-        lineColor: "#0aa",
-        width: 4,
-        height: 40,
-        displayValue: false
-    });
+    //   JsBarcode('#barcode', res.newItem.id || res.id, {
+    //     format: "pharmacode", 
+    //     lineColor: "#0aa",
+    //     width: 4,
+    //     height: 40,
+    //     displayValue: false
+    // });
   }
   });
 };
-function insertBarcode() {}
 
 // //define a function which render new button for items
 // function renderItems () {
