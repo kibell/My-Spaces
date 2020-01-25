@@ -1,12 +1,13 @@
 {
  
     "development": {
-      "username": "root",
-      "password": "root",
-      "database": "myspaces",
-      "host": "127.0.0.1",
-      "dialect": "mysql",
-      "operatorsAliases": false
+ 
+        "username": "root",
+        "password": "@hokageKB1",
+        "database": "myspaces",
+        "host": "127.0.0.1",
+        "dialect": "mysql"
+ 
     },
  
     "test": {

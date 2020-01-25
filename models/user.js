@@ -2,11 +2,7 @@ module.exports = function(sequelize, Sequelize) {
  
     const User = sequelize.define('user', {
  
-        id: {
-            autoIncrement: true,
-            primaryKey: true,
-            type: Sequelize.INTEGER
-        },
+        
  
         firstname: {
             type: Sequelize.STRING,
@@ -17,6 +13,9 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.STRING,
             notEmpty: true
         },
+
+        
+       
  
         username: {
             type: Sequelize.TEXT
@@ -49,7 +48,23 @@ module.exports = function(sequelize, Sequelize) {
  
  
     });
- 
+   
+
+      User.associate = function(models) {
+        // We're saying that an Area should belong to an User
+        // A Area can't be created without an Author due to the foreign key constraint
+        User.hasMany(models.area, {
+            
+            onDelete: "cascade" ,
+            // foreignKey: 'userId',
+          
+          
+              
+            
+      })
+    };
+
     return User;
  
 }
+
