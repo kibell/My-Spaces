@@ -13,10 +13,7 @@ module.exports = function (sequelize, DataTypes) {
         allowNull: false
       }),
       Area.hasMany(models.Storage, {
-          foreignKey: {
-            name: area_id,
             onDelete: "cascade"
-          },
         });
       };
 
