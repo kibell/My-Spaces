@@ -5,9 +5,9 @@ module.exports = function(app) {
   // GET route for getting all of the areas
   app.get("/api/areas", function(req, res) {
     const query = {};
-    if (req.query.id) {
-      query.id = req.query.id;
-    }
+    
+      query.userId = req.user.id;
+    
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.user
@@ -36,10 +36,7 @@ module.exports = function(app) {
 
   // Areas route for saving a new Areas
   app.post("/api/areas", function(req, res) {
-    //   const newArea =  {
-    //     userId = req.user.id
-
-    //   }
+  
 
     req.body.userId = req.user.id
     db.area.create(req.body).then(function(dbAreas) {
