@@ -48,7 +48,7 @@ $(document).ready(function() {
   
     // Function for creating a new list row for areas
     function createAreaRow(areaData) {
-      const newTr = $("<img>");
+      const newTr = $("<div>");
       newTr.data("Area", areaData);
       newTr.append("<div>" + areaData.name + "</div>");
       if (areaData.user) {
