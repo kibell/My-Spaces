@@ -11,6 +11,10 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.TEXT,
         allowNull: false,
         len: [1]
+      },
+      barcode_id: {
+        type: DataTypes.INTEGER,
+        len: [1],
       }
     });
   
@@ -19,6 +23,7 @@ module.exports = function(sequelize, DataTypes) {
       // A Items can't be created without an Storage due to the foreign key constraint
       Item.belongsTo(models.Storage, {
         foreignKey: {
+          name: user_id,
           allowNull: false
         }
       });

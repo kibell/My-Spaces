@@ -12,11 +12,11 @@ const db = require("../models");
 // =============================================================
 module.exports = function(app) {
 
-  // GET route for getting all of the Items
+  // GET route for retrieving all of the item data from the DOM
   app.get("/api/items", function(req, res) {
     const query = {};
-    if (req.query.storage_id) {
-      query.StorageId = req.query.storage_id;
+    if (req.query.StorageId) {
+      query.StorageId = req.query.StorageId;
     }
     // 1. Add a join here to include all of the Storages to these Items
     db.Item.findAll({
@@ -28,11 +28,11 @@ module.exports = function(app) {
   });
 
   // Get route for retrieving a single Item
-  app.get("/api/Items/:id", function(req, res) {
+  app.get("/api/items/:id", function(req, res) {
     // 2. Add a join here to include the Storage 
     db.Item.findOne({
       where: {
-        id: req.params.id
+        id: req.params.barcode_id
       },
       include: [db.Storage]
     }).then(function(dbItem) {
@@ -42,17 +42,17 @@ module.exports = function(app) {
   });
 
   // POST route for saving a new Item
-  app.post("/api/items", function(req, res) {
+  app.post("/api/items/:id", function(req, res) {
     db.Item.create(req.body).then(function(dbItem) {
       res.json(dbItem);
     });
   });
 
   // DELETE route for deleting Item
-  app.delete("/api/Items/:id", function(req, res) {
+  app.delete("/api/items/:id", function(req, res) {
     db.Item.destroy({
       where: {
-        id: req.params.id
+        id: req.params.barcode_id
       }
     }).then(function(dbItem) {
       res.json(dbItem);
@@ -65,7 +65,7 @@ module.exports = function(app) {
       req.body,
       {
         where: {
-          id: req.body.id
+          id: req.body.barcode_id
         }
       }).then(function(dbItem) {
       res.json(dbItem);

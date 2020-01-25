@@ -10,8 +10,6 @@ module.exports = function(sequelize, DataTypes) {
       Storage.hasMany(models.Item, {
         onDelete: "cascade"
       });
-    };
-  
     return Storage;
   };
-  
+}
