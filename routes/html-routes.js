@@ -18,13 +18,7 @@ module.exports = function(app, passport) {
   app.get("/item", function(req, res) {
     res.render("item-list.handlebars",res)
   });
-//  app.post('/login',
-//   passport.authenticate('local-login'),
-//   function(req, res) {
-//     // If this function gets called, authentication was successful.
-//     // `req.user` contains the authenticated user.
-//     res.redirect('/');
-//   });
+
   app.post('/register', passport.authenticate('local-register', {
     successRedirect: '/home',
     failureRedirect: '/',
