@@ -96,13 +96,12 @@ $(document).ready(function() {
   
     // Function for handling what happens when the delete button is pressed
     function handleDeleteButtonPress() {
-      const listItemData = $(this).data("user")
-      console.log(listItemData)
-      const id = listItemData.user.Id;
-      $.ajax({
-        method: "DELETE",
-        url: "/api/areas/" + id
-      })
-        .then(getareas);
-    }
+        app.delete("/api/areas", (req, res) => {
+            const id = req.params.id;
+            db.owners.destroy({
+              where: { id: id }
+            })
+              .then(deletedOwner => {
+                res.json(deletedOwner);
+              });
   });
