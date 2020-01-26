@@ -11,6 +11,10 @@ module.exports = function(sequelize, DataTypes) {
       Storage.hasMany(models.Item, {
         onDelete: "cascade"
       });
+
+      Storage.belongsTo(models.area, {
+
+      }); 
     };
   
     return Storage;
