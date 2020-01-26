@@ -9,27 +9,27 @@
 
 ## Developers
 
-- Developer 1: Dipti Katkar
+- **Developer 1: Dipti Katkar**
   - https://github.com/dkaj1990/Bootstrap-Portfolio
   - https://github.com/dkaj1990
   - https://www.linkedin.com/in/diptikatkar/
 
-- Developer 2: Kitrick Bell
+- **Developer 2: Kitrick Bell**
   - Portfolio: https://kibell.github.io/Bootstrap-Portfolio/
   - Github: https://github.com/kibell
   - LinkedIn: https://www.linkedin.com/in/kitrick-bell-83221494/
   
 
-- Developer 3: Elham Poshtiban
+- **Developer 3: Elham Poshtiban**
   - https://elhamposhtiban.github.io/Bootstrap-Portfolio/
   - https://github.com/elhamposhtiban
   - https://www.linkedin.com/in/elham-poshtiban-2a40a4149/
 
-- Developer 4:Adam Verma
+- **Developer 4: Adam Verma**
 
- - Portfolio
-  - Github
-  - LinkedIn
+  - https://adam-verma.github.io/Responsive-Portfolio/
+  - https://github.com/adam-verma
+  - https://www.linkedin.com/in/adam-verma/
 
 
 ## Animated Gifs/Pictures of App
