@@ -1,10 +1,10 @@
 $(document).ready(function() {
-    console.log("hey I WORK!!!!")
+    
      const areaArray = ["kitchen", "bathroom", "living room", "bedroom"];
     // Getting references to the name input and author container, as well as the table body
     const nameInput = $("#area-input");
     const nameInpoutStorage = $("#storage-input")
-    const areaList = $("tbody");
+    const areaList = $("#area-append");
     const areaContainer = $(".area-container");
     // Adding event listeners to the form to create a new object, and the button to delete
     // an Author
