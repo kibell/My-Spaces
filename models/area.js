@@ -1,5 +1,4 @@
 
-
 module.exports = function(sequelize, DataTypes) {
   
     const Area = sequelize.define("area", {
@@ -30,4 +29,3 @@ module.exports = function(sequelize, DataTypes) {
       
     return Area;
   };
-  
