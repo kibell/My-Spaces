@@ -3,7 +3,7 @@ $(document).ready(function() {
      const areaArray = ["kitchen", "bathroom", "living room", "bedroom"];
     // Getting references to the name input and author container, as well as the table body
     const nameInput = $("#area-input");
-    constnameInpoutStorage = $("#storage-input")
+    const nameInpoutStorage = $("#storage-input")
     const areaList = $("tbody");
     const areaContainer = $(".area-container");
     // Adding event listeners to the form to create a new object, and the button to delete
@@ -82,7 +82,7 @@ $(document).ready(function() {
   
     // A function for rendering the list of areas to the page
     function renderAreaList(rows) {
-      areaList.children().not(":last").remove();
+      // areaList.children().not(":last").remove();
       areaContainer.children(".alert").remove();
       if (rows.length) {
         console.log(rows);
@@ -112,9 +112,10 @@ $(document).ready(function() {
         .then(getareas);
     }
     $(document).on("click", ".new-storage", function () {
-      console.log("click")
-      $('#new-storages').on('shown.bs.modal', function () {
-        $('#myInput').trigger('focus')
-      })
+      // console.log("click")
+      // $('#new-storages').on('shown.bs.modal', function () {
+      //   $('#myInput').trigger('focus')
+      // })
+      createAreaRow()
     })
   });
