@@ -1,6 +1,6 @@
 $(document).ready(function() {
     console.log("hey I WORK!!!!")
-     const areaArray = ["kitchen", "bathroom", "living room", "bedroom"];
+    
     // Getting references to the name input and author container, as well as the table body
     const nameInput = $("#area-input");
     const areaList = $("tbody");
@@ -8,7 +8,7 @@ $(document).ready(function() {
     // Adding event listeners to the form to create a new object, and the button to delete
     // an Author
     $(document).on("submit", ".area-form", handleAreaFormSubmit);
-    $(document).on("click", ".delete-area", handleDeleteButtonPress);
+    $(document).on("click", ".delete-Area", handleDeleteButtonPress);
   
     // Getting the initial list of areas
     getareas();
@@ -48,14 +48,14 @@ $(document).ready(function() {
   
     // Function for creating a new list row for areas
     function createAreaRow(areaData) {
-      const newTr = $("<img>");
+      const newTr = $("<div>");
       newTr.data("Area", areaData);
       newTr.append("<div>" + areaData.name + "</div>");
-      if (areaData.user) {
-        newTr.append("<div> " + areaData.user.id + "</div>");
-      } else {
-        newTr.append("<td>0</td>");
-      }
+    //   if (areaData.user) {
+    //     newTr.append("<div> " + areaData.user.id + "</div>");
+    //   } else {
+    //     newTr.append("<td>0</td>");
+    //   }
       
       newTr.append("<td><a style='cursor:pointer;color:red' class='delete-Area'>Delete Area</a></td>");
       return newTr;
@@ -96,8 +96,9 @@ $(document).ready(function() {
   
     // Function for handling what happens when the delete button is pressed
     function handleDeleteButtonPress() {
-      const listItemData = $(this).parent("td").parent("tr").data("area");
-      const id = listItemData.id;
+      const listItemData = $(this).data("user")
+      console.log(listItemData)
+      const id = listItemData.user.Id;
       $.ajax({
         method: "DELETE",
         url: "/api/areas/" + id
