@@ -54,9 +54,9 @@ $(document).ready(function() {
     //   newTr.attr("data-target", "#new-storages");
       newTr.attr("data-toggle", "modal");
       newTr.append("<div>" + areaData.name + "</div>");
-      newTr.append("<a style='cursor:pointer; color:green; class = 'new-storage'>Add Storage</a>")
+      newTr.append("<a style='cursor:pointer; color:green;' class='new-storage' >Add Storage</a>")
     //   newTr.addClass("new-storage");
-      newTr.addClass("btn");
+    //   newTr.addClass("btn");
       
     //   if (areaData.user) {
     //     // newTr.append("<div> " + areaData.user.id + "</div>");
@@ -112,11 +112,6 @@ $(document).ready(function() {
       })
         .then(getareas);
     }
-    $(document).on("click", ".new-storage", function () {
-      // console.log("click")
-      // $('#new-storages').on('shown.bs.modal', function () {
-      //   $('#myInput').trigger('focus')
-      // })
-      createAreaRow()
-    })
+   
+
   });
