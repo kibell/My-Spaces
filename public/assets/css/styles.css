@@ -24,6 +24,8 @@ html, body {
     background-position: top;    
 } 
 
+/* navbar */
+
 .logo-image{
     height: 60px;
 } 
@@ -208,47 +210,19 @@ html, body {
         }
 }
 
-@keyframes moveModal {
-        0%{
-            -webkit-transform-style: preserve-3d;
-            -moz-transform-style: preserve-3d;
-            transform-style: preserve-3d;
-            -webkit-transform: rotateY(-70deg);
-            -moz-transform: rotateY(-70deg);
-            -ms-transform: rotateY(-70deg);
-            transform: rotateY(-70deg);
-            -webkit-transition: all 0.3s;
-            -moz-transition: all 0.3s;
-            transition: all 0.3s;
-            opacity: 0;
-      
-        }
-
-        100%{
-
-            -webkit-transform: rotateY(0deg);
-            -moz-transform: rotateY(0deg);
-            -ms-transform: rotateY(0deg);
-            transform: rotateY(0deg);
-            opacity: 1;
-
-        }
-}
 
        /* modals */
 
-.md-effect-8 {
-    perspective: 600px;
-    animation:  moveModal 0.5s ease-out ;     
+.modals-button-spaces {
+    background-color: #7A92B3;
+    color: #fff;
+    border-radius: 100px;
 }
 
-.modal-dialog {
-        width: 900px;
+.area-part, storage-part {
+    color : #777;
 }
 
-.md-content {
-    background-color: #506E98 ;
-}
 
        /* footer */
 

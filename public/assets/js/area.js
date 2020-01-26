@@ -3,6 +3,7 @@ $(document).ready(function() {
     
     // Getting references to the name input and author container, as well as the table body
     const nameInput = $("#area-input");
+    const nameInpoutStorage = $("#storage-input")
     const areaList = $("tbody");
     const areaContainer = $(".area-container");
     // Adding event listeners to the form to create a new object, and the button to delete
@@ -49,17 +50,23 @@ $(document).ready(function() {
     // Function for creating a new list row for areas
     function createAreaRow(areaData) {
       const newTr = $("<div>");
-      newTr.data("Area", areaData);
+      newTr.attr("data-area", areaData.id);
+      newTr.attr("data-target", "#new-storages");
+      newTr.attr("data-toggle", "modal");
       newTr.append("<div>" + areaData.name + "</div>");
-    //   if (areaData.user) {
-    //     newTr.append("<div> " + areaData.user.id + "</div>");
-    //   } else {
-    //     newTr.append("<td>0</td>");
-    //   }
+      newTr.addClass("new-storage");
+      newTr.addClass("btn");
+      
+      if (areaData.user) {
+        // newTr.append("<div> " + areaData.user.id + "</div>");
+      } else {
+        newTr.append("<td>0</td>");
+      }
       
       newTr.append("<td><a style='cursor:pointer;color:red' class='delete-Area'>Delete Area</a></td>");
       return newTr;
-    }
+    }  
+
   
     // Function for retrieving areas and getting them ready to be rendered to the page
     function getareas() {
@@ -75,7 +82,7 @@ $(document).ready(function() {
   
     // A function for rendering the list of areas to the page
     function renderAreaList(rows) {
-      areaList.children().not(":last").remove();
+      // areaList.children().not(":last").remove();
       areaContainer.children(".alert").remove();
       if (rows.length) {
         console.log(rows);

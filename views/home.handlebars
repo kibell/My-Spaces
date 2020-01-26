@@ -11,12 +11,12 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto part-left">
                 <li class="nav-item-left">
-                    <a class="nav-link active" href="#">Home
+                    <a class="nav-link active" href="home.handlebars">Home
                         <span class="sr-only">(current)</span>   
                     </a>
                 </li>
                 <li class="nav-item-left">
-                    <a class="nav-link" href="#"> Item List </a>
+                    <a class="nav-link" href="item-list.handlebars"> Item List </a>
                 </li>
                 <li class="nav-item-left">
                     <a class="nav-link" href="#"> Sell your's</a>
@@ -38,33 +38,34 @@
                 </ul>
             </form>
         </div>
-    </nav>
+    </nav> <!--navbar-->
+
+    
 
         <!--mainpage-->
     <div class="container mt-4">
-          <!--profile part-->
+        
         <div class="row mt-4">
                     <br>
+                    <!--profile part-->
             <div class="col-md-4"> 
                 <div class="card card-profile" >
                     <div class="card-header">Your profile</div>
                     <div class="card-body">
+
                         <div class='row'>
-                            <div class='col-lg-4 col-sm-2'>
+
+                            <div class='col-lg-4 col-sm-2'></div>
                                 
-                            </div>
                             <div class='col-lg-4 col-sm-8'>
                                 <div class="profile-userpic">
-                                <i class="fas fa-user" id="user-icone"></i> 
+                                    <i class="fas fa-user" id="user-icone"></i> 
+                                </div>
                             </div>
-                            </div>
-                            <div class='col-lg-4 col-sm-2'>
+                            <div class='col-lg-4 col-sm-2'></div>
                                 
-                            </div>
                         </div>
-                            {{!-- <div class="profile-userpic">
-                                <i class="fas fa-user" id="user-icone"></i> 
-                            </div> --}}
+
                             <div class="profile-usertitle">
                                 <div class="profile-usertitle-name">
                                     
@@ -75,397 +76,142 @@
                                                             
                                 </div>
                             </div>
-                            <div class="profile-userbuttons">
-                                <button type="button" class="btn btn-info  btn-sm">Message</button>
-                            </div>
-                            <div class="profile-usermenu">
-                                <span class="storage-item"> the items he or she store</span>
-                                <br>
-                                <span class="storage-spaces"> the spaces that her or she used</span>
-                            </div>
+                            <div class="profile-usermenu"></div>
                     </div>
                 </div>     
-            </div>
+            </div> <!--profile part-->
+                    
 
 
              <!--spaces part-->
+             <!--col-8-->
             <div class="col-md-8"> 
-                 <div class="card mb-3 card-area" >
-                    <div class="card-header">Your spaces</div>
-                    <div class="card-body">
-                        <div class="row mt-4">
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-12">
+                     <!--card for space area -->
+                <div class="card mb-3 card-area" >
+                        <div class="card-header">Your spaces</div>
+                            <div class="card-body">
+                                <div class="row mt-4">
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-12">
 
-                            <a href="#" type="submit"  data-toggle="modal" data-target="#area-modal"><i class="fas fa-plus icone-spaces"></i></a>
-                            <br>
-                                <div class="area-container">
-        
-                            <span class="title-area">add areas</span>
+                                                <a href="#" type="submit"  data-toggle="modal" data-target="#area-modal"><i class="fas fa-plus icone-spaces"></i></a>
+                                                 <br>
+                                                <div class="area-container">
                             
-                                <table class="table table-striped">
+                                                <span class="title-area">Add Areas</span>
                                                 
-								
-						<tbody>
-							<tr id="form-row-main">
-								<form class="area-form">
-									<td colspan="4">
-									
-								</form>
-							</tr>
-						</tbody>
-					</table>
+                                                    <table class="table table-striped">
+                                                                    
+                                                        <tbody>
+                                                            <tr id="form-row-main">
+                                                                <form class="area-form">
+                                                                    <td colspan="4">
+                                                                    
+                                                                </form>
+                                                            </tr>
+                                                        </tbody>
+
+                                                    </table>
+                                                </div>
+                                            </div>                                
+                                        </div>
                                     </div>
-                                </div>                                
+                                </div>
                             </div>
-                        </div>
-                    </div>
-
-
- <div class="modal fade modal-login" id="area-modal" tabindex="-1" role="dialog"
-        aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog modal-md" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="signin-brand">Org Spaces</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+                        <!--card for space area -->
                 </div>
-                <div class="modal-body area-part">
-                   <h1>Areas</h1>
-					<table class="table table-striped">
-						<thead>
-							<tr>
-								<th>Name</th>
-								
-							</tr>
-						</thead>
-						<tbody>
-							<tr id="form-row">
-								<form class="area-form">
-									<td colspan="4">
-										<input placeholder="Enter a name" id="area-input" type="text" />
-									</td>
-									<td><button type="submit" class="btn btn-success ">Create Area</button>
-									</td>
-								</form>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-                </div>
+                        <!--col-8-->
             </div>
-        </div>
-    </div>
-                {{!-- <div class="card mb-3 card-area" >
-                    <div class="card-header">Your spaces</div>
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-md-6">
+        <!-- modals for spaces part-->
+    <div class="modal fade " id="area-modal" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            <div class="modal-dialog modal-md" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="signin-brand">Org Spaces</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body area-part">
+                    <h1>Areas</h1>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
                                     
-                               <a href="#" type="submit" data-toggle="modal" data-target="#modal-kitchen" class="btn">
-                                <img src="assets/img/kitchen1.jpg" alt="kitchen-area" class="img-thumbnail img-area" >
-                               </a>
-                                <br>
-                                <span class="title-area">kitchen</span>
-                            </div>
-                            <div class="col-md-6">
-                                <a href="#" type="submit" data-toggle="modal" data-target="#modal-livingroom"class="btn"><img src="assets/img/livingroom1.jpg" alt="livingroom" class=" img-thumbnail img-area"></a>
-                                <br>
-                                <span class="title-area">livingroom</span>
-                            </div>
-                        </div>
-                        <div class="row mt-4">
-                            <div class="col-md-6">
-                                <a href="#" type="submit" data-toggle="modal" data-target="#modal-bedroom"class="btn"><img src="assets/img/bedroom1.jpg" alt="bedroom-area" class="img-thumbnail img-area"></a>
-                                <br>
-                                <span class="title-area">bedroom</span>
-                            </div>
-                            <div class="col-md-6">
-                                <a href="#" type="submit" data-toggle="modal" data-target="#modal-bathroom"class="btn"><img src="assets/img/bathroom2.jpg" alt="bedroom-area" class="img-thumbnail img-area"></a>
-                                <br>
-                                <span class="title-area">bathroom</span>
-                            </div>
-
-                        </div>
-                        <div class="row mt-4">
-
-                            <div class="col-md-6">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <a href="#" type="submit" data-toggle="modal" data-target="#modal-more-storage"><i class="fas fa-plus icone-spaces"></i></a>
-                                        <br>
-                                        <span class="title-area">add more areas</span>
-                                    </div>
-                                </div>                                
-                            </div>
-                        </div>
-                    </div>      
-                </div> --}}
-            </div>
-        </div>
-        	
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="form-row">
+                                    <form class="area-form">
+                                        <td colspan="4">
+                                            <input placeholder="Enter a name" id="area-input" type="text" />
+                                        </td>
+                                        <td>
+                                            <button type="submit" class="btn  modals-button-spaces">Create Area</button>
+                                        </td>
+                                    </form>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    </div>
+                </div>
     </div>
-            {{!-- <!-- Modal for kitchen -->
-        <div class="modal md-effect-8" id="modal-kitchen" tabindex="-1" role="dialog"
-         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+            
+
+            <!-- modals for storage part-->
+
+
+    <div class="modal fade " id="new-storages" tabindex="-1" role="dialog"
+            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
             <div class="modal-dialog modal-md" role="document">
-                <div class="md-content">
+                <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title"> your storage</h5>
+                        <h5 class="modal-title" id="signin-brand">Org Spaces</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                            <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div class="modal-body">
-                        <div class="row">
-                                <div class="col-md-6">
-                                    <a href="#"><img src="assets/img/pantry.jpg" alt="bedroom-area" class="img-thumbnail img-area"></a>
-                                    <br>
-                                    <span class="title-area">pantry</span>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <a href="#"><i class="fas fa-plus icone-spaces"></i></a>
-                                            <br>
-                                            <span class="title-area">add more storage</span>
-                                        </div>
-                                    </div>                                
-                                </div>
-                        </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>              
-                </div>
-            </div>
-            </div>
-        </div>
-
-            <!-- Modal for livingroom -->
-        <div class="modal md-effect-8" id="modal-livingroom" tabindex="-1" role="dialog"
-         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog modal-md" role="document">
-                <div class="md-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">your storage</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
+                    <div class="modal-body storage-part">
+                    <h1>Storage</h1>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr id="form-row-storage">
+                                    <form class="storage-form">
+                                        <td colspan="4">
+                                            <input placeholder="Enter a name" id="storage-input" type="text" />
+                                        </td>
+                                        <td><button type="submit" class="btn modals-button-spaces">Create Storage</button>
+                                        </td>
+                                    </form>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="modal-body">
-                        <div class="row mt-4">
-                                <div class="col-md-6">
-                                    <a href="#"><img src="assets/img/shelf.jpg" alt="bedroom-area" class="img-thumbnail img-area"></a>
-                                    <br>
-                                    <span class="title-area">shelfs</span>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <a href="#"><i class="fas fa-plus icone-spaces"></i></a>
-                                            <br>
-                                            <span class="title-area">add more storage</span>
-                                        </div>
-                                    </div>                                
-                                </div>
-                        </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                 </div>
-            </div>
-            </div>
-        </div>
-
+    </div>
         
-                    <!-- Modal for bedroom -->
-        <div class="modal md-effect-8" id="modal-bedroom" tabindex="-1" role="dialog"
-         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog modal-md" role="document">
-                <div class="md-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">your storage</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row mt-4">
-                                <div class="col-md-6">
-                                    <a href="#"><img src="assets/img/closet.jpg" alt="bedroom-area" class="img-thumbnail img-area"></a>
-                                    <br>
-                                    <span class="title-area">walking closet</span>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <a href="#"><i class="fas fa-plus icone-spaces"></i></a>
-                                            <br>
-                                            <span class="title-area">add more storage</span>
-                                        </div>
-                                    </div>                                
-                                </div>
-                        </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
-
-                    <!-- Modal for bathroom -->
-        <div class="modal md-effect-8" id="modal-bathroom" tabindex="-1" role="dialog"
-         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog modal-md" role="document">
-                <div class="md-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">your storage</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row mt-4">
-                                <div class="col-md-6">
-                                    <a href="#"><img src="assets/img/laundry-room.jpg" alt="bedroom-area" class="img-thumbnail img-area"></a>
-                                    <br>
-                                    <span class="title-area">laundry shelfs</span>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <div class="col-md-12">
-                                            <a href="#"><i class="fas fa-plus icone-spaces"></i></a>
-                                            <br>
-                                            <span class="title-area">add more storage</span>
-                                        </div>
-                                    </div>                                
-                                </div>
-                        </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
-
-                    <!-- Modal for more space -->
-        <div class="modal md-effect-8" id="modal-more-storage" tabindex="-1" role="dialog"
-         aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-            <div class="modal-dialog modal-md" role="document">
-                <div class="md-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">your storage</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <a href=""><i class="fas fa-plus icone-spaces"></i></a>
-                                <br>
-                                <span class="title-area">add Space</span>
-                            </div>
-                        </div>                                
-                    </div>
-                </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </div>
-            </div> --}}
-        </div>
-      
-
-      {{!-- <!-- Modal -->
-  <div class="modal fade org-spaces" id="org-spaces-modal" tabindex="-1" role="dialog"
-    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
-        <div class="modal-dialog modal-md" role="document">
-        <div class="modal-content">
-
-
-        <div class="modal-header">
-
-            <h5 class="modal-title" id="signin-brand"> We find a perfect match for you !</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-
-        <div class="modal-body">
-
-            <h5 id="friend-name" class="mb-2"> </h5>
-
-            <img class="img-fluid" id="friend-photo"
-                alt="making friends"/>
-
-        </div>
-        <div class="modal-footer">
-            <button type="reset" class="btn btn-secondary" id="close" data-dismiss="modal">Close</button>
-        </div>
-
-        </div>
+        
+        <!-- closing the col related to spaces -->
+        
+    
+  </div>
+        <!-- closing the row  -->
 
     </div>
 
- </div> --}}
-
-
-      <!--fixed bottom footer-->
-
-     {{!-- <footer  class="mt-4">
-        <div class="clearfix"></div>
-        <div class="footer">
-            <nav class="navbar-bottom navbar-expand-lg navbar-light bg-light" id="bottom-navbar">
-          <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">About Us <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">LinkedIn</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Instagram</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Twitter</a>
-                </li>
-          </ul>
-          </nav> 
-        </div>
-    </footer> --}}
-{{!--         
-
-             <!--fixed bottom footer-->
-    <nav class="navbar-bottom navbar-expand-lg navbar-light bg-light" id="bottom-navbar">
-        <div class="collapse navbar-collapse" id="bottom-navbar-content">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">About Us <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">LinkedIn</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Instagram</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Twitter</a>
-                </li>
-            </ul>
-        </div>
-    </nav> --}}
+    <!-- closing the container -->
+      
 
     <!-- Footer -->
 <footer class="page-footer font-small footer">

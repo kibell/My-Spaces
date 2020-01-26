@@ -71,13 +71,12 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="login" name="login" method="post" action="/login">
-                         <label for="email">Email Address</label>
-                         <input class="text" name="email" type="email" />
-                         <label for="password">Password</label>
-                         <input name="password" type="password" />
-                      
-    
+                    <form id="login" name="login" class="form-group" method="post" action="/login">
+                        <label for="email">Email Address</label>
+                        <input type="text" name="email" class="form-control"  placeholder=" Email Address">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" class="form-control"  placeholder="Password">
+                    
                     <!-- showing error to client -->
                     <div class="message-login"></div>
                 </div>
