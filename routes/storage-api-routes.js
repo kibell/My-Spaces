@@ -2,9 +2,18 @@ var db = require("../models");
 
 module.exports = function(app) {
   app.get("/api/storages", function(req, res) {
+
+     const query = {};
+     if (req.query.areaid) {
+      query.areaId = req.query.areaid;
+    }
+  
+      //query.areaId = req.query.areaid;
+
     // 1. Add a join to include all of each Storage's Items
     db.Storage.findAll({
-        include: [db.Item]
+         where: query,
+        include: [db.area]
     }).then(function(dbStorage) {
       res.json(dbStorage);
     });
@@ -15,7 +24,8 @@ module.exports = function(app) {
     db.Storage.findOne({
       where: {
         id: req.params.id
-      }
+      },
+      include: [db.Area]
     }).then(function(dbStorage) {
       res.json(dbStorage);
     });

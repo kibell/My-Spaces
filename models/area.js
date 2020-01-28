@@ -20,8 +20,21 @@ module.exports = function(sequelize, DataTypes) {
         // Associating Storage with Items
         // When an Storage is deleted, also delete any associated Items
         Area.belongsTo(models.user, {
-           
-             
+
+            foreignKey: {
+              allowNull: false
+            } 
+            
+        });
+      };
+
+      Area.associate = function(models) {
+        // Associating Storage with Items
+        // When an Storage is deleted, also delete any associated Items
+        Area.hasMany(models.Storage , {
+
+            onDelete: "cascade" ,
+
             
         });
       };

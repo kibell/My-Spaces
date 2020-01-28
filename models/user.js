@@ -55,14 +55,13 @@ module.exports = function(sequelize, Sequelize) {
         // A Area can't be created without an Author due to the foreign key constraint
         User.hasMany(models.area, {
             
-            onDelete: "cascade" ,
+            onDelete: "cascade" 
             // foreignKey: 'userId',
-          
-          
-              
+             
             
       })
     };
+
 
     return User;
  
