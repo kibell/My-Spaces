@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
   Storage.associate = function(models) {
     // Associating Storage with Items
     // When an Storage is deleted, also delete any associated Items
-    Storage.hasMany(models.Item, {
+    Storage.belongsTo(models.area, {
       onDelete: "cascade"
     });
   };
