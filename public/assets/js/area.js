@@ -1,10 +1,9 @@
 $(document).ready(function() {
     
-     const areaArray = ["kitchen", "bathroom", "living room", "bedroom"];
+     
     // Getting references to the name input and author container, as well as the table body
     const nameInput = $("#area-input");
-    const nameInpoutStorage = $("#storage-input")
-    const areaList = $("#area-append");
+    const areaList = $(".area-append");
     const areaContainer = $(".area-container");
     // Adding event listeners to the form to create a new object, and the button to delete
     // an Author
@@ -29,19 +28,8 @@ $(document).ready(function() {
       });
     }
 
-  //   function renderAreas () {
-
-  //     $(".area-part").empty();
   
-  //     for (let i=0; i<areaArray.length; i++) {
-  //         const btArea = $('<img>').addClass("img-thumbnail").attr("src", );
-
-          
-  //         $(".area-part").append(btArea);
-  //     }
-  // }
-  
-    // A function for creating an author. Calls getareas upon completion
+    // A function for creating an Area. Calls getareas upon completion
     function upsertArea(areaData) {
       $.post("/api/areas", areaData)
         .then(getareas);
@@ -57,12 +45,6 @@ $(document).ready(function() {
       newTr.append("<a style='cursor:pointer; color:green;' class='new-storage' data-toggle='modal' data-target='#new-storages' >Add Storage</a>")
     //   newTr.addClass("new-storage");
       newTr.addClass("btn");
-      
-    //   if (areaData.user) {
-    //     // newTr.append("<div> " + areaData.user.id + "</div>");
-    //   } else {
-    //     newTr.append("<td>0</td>");
-    //   }
       
       newTr.append("<td><a style='cursor:pointer;color:red' class='delete-Area'>Delete Area</a></td>");
       return newTr;
@@ -86,7 +68,7 @@ $(document).ready(function() {
       // areaList.children().not(":last").remove();
       areaContainer.children(".alert").remove();
       if (rows.length) {
-        console.log(rows);
+        
         areaList.prepend(rows);
       }
       else {
