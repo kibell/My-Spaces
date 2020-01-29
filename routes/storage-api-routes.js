@@ -2,6 +2,14 @@ const db = require("../models");
 
 module.exports = function(app) {
   app.get("/api/storages", function(req, res) {
+
+     const query = {};
+     if (req.query.areaid) {
+      query.areaId = req.query.areaid;
+    }
+  
+      //query.areaId = req.query.areaid;
+
     // 1. Add a join to include all of each Storage's Items
      const query = {};
       //  query.areaId = req.body.areaId
