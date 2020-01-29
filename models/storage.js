@@ -1,6 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
   
   const Storage = sequelize.define("storage", {
+
+    
     // Giving the Storage model a name of type STRING
     name: DataTypes.STRING,
 
@@ -14,8 +16,7 @@ module.exports = function(sequelize, DataTypes) {
     
 
     Storage.belongsTo(models.area,{
-      foreignKey: 'areaId'
-
+     
     })
 
  

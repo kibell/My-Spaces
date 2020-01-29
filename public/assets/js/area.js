@@ -5,6 +5,11 @@ $(document).ready(function() {
     const nameInput = $("#area-input");
     const areaList = $(".area-append");
     const areaContainer = $(".area-container");
+    const nameInputStorage = $("#storage-input")
+    const storageList = $("#storage-append");
+    const storageContainer = $(".storage-container")
+
+    console.log(storageList)
     // Adding event listeners to the form to create a new object, and the button to delete
     // an Author
     $(document).on("submit", ".area-form", handleAreaFormSubmit);
@@ -16,6 +21,7 @@ $(document).ready(function() {
     // A function to handle what happens when the form is submitted to create a new Author
     function handleAreaFormSubmit(event) {
       event.preventDefault();
+      console.log("brandon")
       // Don't do anything if the name fields hasn't been filled out
       if (!nameInput.val().trim().trim()) {
         return;
@@ -38,7 +44,8 @@ $(document).ready(function() {
     // Function for creating a new list row for areas
     function createAreaRow(areaData) {
       const newTr = $("<div>");
-    //   newTr.attr("data-area", areaData.id);
+      newTr.attr("data-area", areaData.id);
+      
     //   newTr.attr("data-target", "#new-storages");
       newTr.attr("data-toggle", "modal");
       newTr.append("<div>" + areaData.name + "</div>");
@@ -49,6 +56,48 @@ $(document).ready(function() {
       newTr.append("<td><a style='cursor:pointer;color:red' class='delete-Area'>Delete Area</a></td>");
       return newTr;
     }  
+
+
+//appending storages 
+    function createStorageRow(storageData) {
+                const newTS = $("<div>");
+                newTS.attr("<div>" + storageData.id + "</div>");
+              //   newTr.attr("data-target", "#new-storages");
+                // newTr.attr("data-toggle", "modal");
+                newTS.append("<div>" + storageData.name + "</div>");
+                newTS.append("<a style='cursor:pointer; color:green;' class='new-item' data-toggle='modal' data-target='#new-storage' >Add Item</a>")
+              //   newTr.addClass("new-storage");
+                newTS.addClass("btn");
+        
+                return newTS
+              }
+
+
+
+
+              function getstorages() {
+                    $.get("/api/storages", function(data) {
+                      const rowsToAdd = [];
+                      console.log(data)
+                      for (let i = 0; i < data.length; i++) {
+                        rowsToAdd.push(createStorageRow(data[i]));
+                      }
+                      renderStorageList(rowsToAdd);
+                      nameInputStorage.val("");
+                    });
+                  }
+
+                  function renderStorageList(rows) {
+                        // areaList.children().not(":last").remove();
+                        storageContainer.children(".alert").remove();
+                        if (rows.length) {
+                        //   console.log(rows);
+                          storageList.prepend(rows);
+                        }
+                        else {
+                          renderEmpty();
+                        }
+                      }
 
   
     // Function for retrieving areas and getting them ready to be rendered to the page
@@ -96,4 +145,63 @@ $(document).ready(function() {
     }
    
 
-  });
+
+    $(document).on('click', '.new-storage', function(e){
+            console.log($(this))
+        
+            const areaId = $(this).parent().data("area")
+            
+            $('#createStorageBtn').attr("data-area", areaId)
+
+
+    });
+
+
+    function upsertStorage(storageData) {
+            $.post("/api/storages", storageData)
+              .then(getstorages);
+          }
+
+
+    $(document).on("submit", ".storage-form", handleStorageFormSubmit) 
+
+    function handleStorageFormSubmit(event) {
+        event.preventDefault();
+        // Don't do anything if the name fields hasn't been filled out
+        // if (!nameInputStorage.val().trim().trim()) {
+        //   return;
+
+        // }
+
+        // $(document).on('click', '#createStorageBtn', function(e){
+                const dataId = $('#createStorageBtn').data('area')
+                
+                console.log(dataId)
+
+            const storageData = {
+                name: nameInputStorage
+                    .val()
+                    .trim(),
+
+                areaId: dataId
+
+            }
+
+
+                $.post("/api/storages", storageData)
+                .then(function (){
+                        console.log(storageData)
+                        getstorages();
+                });
+
+        // });
+
+        // Calling the upsertArea function and passing in the value of the name input
+        // upsertStorage({
+        //   name: nameInputStorage
+        //     .val()
+        //     .trim()
+        // });
+      }
+
+});

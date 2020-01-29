@@ -3,9 +3,9 @@ const db = require("../models");
 module.exports = function(app) {
   app.get("/api/storages", function(req, res) {
     // 1. Add a join to include all of each Storage's Items
-    //  const query = {};
-      //  query.areaId = req.area.id;
-    
+     const query = {};
+      //  query.areaId = req.body.areaId
+   
      
     db.storage.findAll({
       // where: query,
@@ -14,6 +14,7 @@ module.exports = function(app) {
     }).then(function(dbStorage) {
       res.json(dbStorage);
     });
+    console.log(res, req)
   });
 
   app.get("/api/storages/:id", function(req, res) {
@@ -30,7 +31,7 @@ module.exports = function(app) {
 
 
   app.post("/api/storages", function(req, res) {
-console.log(req.body)
+
     
     // req.body.areaId = req.area.id
     db.storage.create(req.body).then(function(dbStorage) {
