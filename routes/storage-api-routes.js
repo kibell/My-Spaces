@@ -25,7 +25,7 @@ module.exports = function(app) {
       where: {
         id: req.params.id
       },
-      include: [db.Area]
+      include: [db.area]
     }).then(function(dbStorage) {
       res.json(dbStorage);
     });

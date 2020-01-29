@@ -21,11 +21,7 @@
  
     "production": {
  
-        "username": "root",
-        "password": null,
-        "database": "myspaces",
-        "host": "127.0.0.1",
-        "dialect": "mysql"
+        "use-env-variable":"JAWSDB-URL"
  
     }
 }
