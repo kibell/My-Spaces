@@ -6,7 +6,7 @@ module.exports = function(app) {
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.area
     db.user.findAll({
-      include: [db.areas]
+      include: [db.area]
     }).then(function(dbUser) {
       res.json(dbUser);
     });
