@@ -4,9 +4,13 @@ module.exports = function(app) {
     
   // GET route for getting all of the areas
   app.get("/api/areas", function(req, res) {
-    const query = {};
+     const query = {};
+
+     if (req.query.userid) {
+      query.userId = req.query.userid;
+    }
     
-      query.userId = req.user.id;
+    // query.userId = req.query.userid;
     
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
