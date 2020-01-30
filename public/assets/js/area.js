@@ -194,14 +194,6 @@ $(document).ready(function() {
                         getstorages();
                 });
 
-        // });
-
-        // Calling the upsertArea function and passing in the value of the name input
-        // upsertStorage({
-        //   name: nameInputStorage
-        //     .val()
-        //     .trim()
-        // });
       }
 
 });
