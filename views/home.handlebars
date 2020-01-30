@@ -89,7 +89,7 @@
                      <!--card for space area -->
                 <div class="card mb-3 card-area" >
                         <div class="card-header">Your spaces</div>
-                            <div class="card-body">
+                            <div class="card-body show">
                                 <div class="row mt-4">
                                     <div class="col-md-6">
                                         <div class="row">
@@ -103,7 +103,7 @@
                                                 
                                                     <table class="table table-striped">
                                                                     
-                                                        <tbody>
+                                                        <tbody class ="area-append">
                                                             <tr id="form-row-main">
                                                                 <form class="area-form">
                                                                     <td colspan="4">
@@ -116,7 +116,10 @@
                                                 </div>
                                             </div>                                
                                         </div>
-                                    </div>
+                                    </div> 
+                                     <div class="col-md-6 storage-container">
+
+                                     </div>
                                 </div>
                             </div>
                         <!--card for space area -->
@@ -143,7 +146,7 @@
                                     
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody class = "area-append">
                                 <tr id="form-row">
                                     <form class="area-form">
                                         <td colspan="4">
@@ -184,13 +187,13 @@
                                     
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody id = "storage-append">
                                 <tr id="form-row-storage">
                                     <form class="storage-form">
                                         <td colspan="4">
                                             <input placeholder="Enter a name" id="storage-input" type="text" />
                                         </td>
-                                        <td><button type="submit" class="btn modals-button-spaces">Create Storage</button>
+                                        <td><button type="submit" class="btn modals-button-spaces" id ="createStorageBtn">Create Storage</button>
                                         </td>
                                     </form>
                                 </tr>
@@ -270,11 +273,3 @@
 <!-- Footer -->
 
 </div>
-
-
-
-
-
-
-
-    
