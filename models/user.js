@@ -33,7 +33,9 @@ module.exports = function(sequelize, Sequelize) {
             type: Sequelize.ENUM('active', 'inactive'),
             defaultValue: 'active'
         }
-    });
+ 
+ 
+    })
    
 
       User.associate = function(models) {
@@ -44,7 +46,22 @@ module.exports = function(sequelize, Sequelize) {
             // foreignKey: 'userId',
   
       })
+     
+    
+
     };
+
+    // User.associate = function(models) {
+    //     // We're saying that an Area should belong to an User
+    //     // A Area can't be created without an Author due to the foreign key constraint
+    //     User.hasMany(models.storage, {
+            
+    //         onDelete: "cascade" 
+    //         // foreignKey: 'userId',
+             
+            
+    //   })
+    // };
 
     return User;
  

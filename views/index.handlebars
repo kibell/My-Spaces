@@ -36,7 +36,7 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text"><i class="fas fa-key"></i></span>
                                 </div>
-                                <input type="password" name="password" class="form-control" id="password-input" placeholder="Password">
+                                <input type="password" name="password" autocomplete="on" class="form-control" id="password-input" placeholder="Password">
                             </div>
                                 <p id="terms">By signing up, you agree to out <span id="boldFont">Terms, Data Policy, and Cookies Policy </span>.
                                 </p>
@@ -70,11 +70,11 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="login" name="login" class="form-group" method="post" action="/login">
+                    <form name="login" class="form-group" method="post" action="/login">
                         <label for="email">Email Address</label>
                         <input type="text" name="email" class="form-control"  placeholder=" Email Address">
                         <label for="password">Password</label>
-                        <input type="password" name="password" class="form-control"  placeholder="Password">
+                        <input type="password" name="password" class="form-control" autocomplete="on"  placeholder="Password">
                     
                     <!-- showing error to client -->
                     <div class="message-login"></div>

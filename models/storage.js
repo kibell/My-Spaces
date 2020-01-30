@@ -1,8 +1,13 @@
 module.exports = function(sequelize, DataTypes) {
   
-  const Storage = sequelize.define("Storage", {
+  const Storage = sequelize.define("storage", {
+
+    
     // Giving the Storage model a name of type STRING
-    name: DataTypes.STRING
+    name: DataTypes.STRING,
+
+
+    
   });
 
   Storage.associate = function(models) {
@@ -13,5 +18,12 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
 
+    Storage.belongsTo(models.area,{
+     
+    })
+
+ 
+  };
+  
   return Storage;
-};
+}

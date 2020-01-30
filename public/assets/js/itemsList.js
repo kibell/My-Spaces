@@ -122,7 +122,7 @@ $(document).ready(function() {
 
    // Function for retrieving authors and getting them ready to be rendered to the page
    function getItems() {
-    $.get("/api/items", function(data) {
+    $.get("/api/items", function(data) {s
       let rowsToAdd = [];
       for (const i = 0; i < data.length; i++) {
         rowsToAdd.push(createItemRow(data[i]));

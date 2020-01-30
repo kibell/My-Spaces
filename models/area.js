@@ -12,6 +12,10 @@ module.exports = function(sequelize, DataTypes) {
  
       });
     };
+    Area.hasMany(models.Storage, {
+           
+    });
+  };
 
   return Area;
 };
