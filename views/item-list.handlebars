@@ -31,7 +31,7 @@
                                type="submit">Search</button>
                        </li>
                        <li class="nav-item-right">
-                           <a href="#" class="noticifation-btn"><i class="far fa-bell notification-icone"></i></a>
+                           <a href="#" class="notification-btn"><i class="far fa-bell notification-icone"></i></a>
                        </li>
                        <li class="nav-item-right">
                            <a href="/logout" class="log-out-btn"> <i class="fas fa-power-off icone-logout"> </i>
@@ -61,7 +61,7 @@
                            <div class="items-list" id="items-view">
 
                            </div>
-    
+
                        </div>
                    </div>
                </div>
@@ -69,7 +69,9 @@
                    <div class="card-item-drop">
                        <div class="card-body">
                            <div id="items-view-drop" class="list">
-                               
+                               <h1>Items</h1>
+                               <div id="items-list"> 
+                                </div>
                            </div>
                        </div>
                    </div>
@@ -80,7 +82,7 @@
 
 
        <!-- Modal -->
-       <div class="modal fade modal-create-item" id= "create-item-modal" tabindex="-1" role="dialog"
+       <div class="modal fade modal-create-item" id="create-item-modal" tabindex="-1" role="dialog"
            aria-labelledby="exampleModalLongTitle" aria-hidden="true">
            <div class="modal-dialog modal-md" role="document">
                <div class="modal-content">
@@ -94,9 +96,10 @@
                        <form id="new-item" name="new-item" method="post" action="/api/items">
                            <label for="item-name">Item Name</label>
                            <input class="text" name="item-name" type="name" id="item-name" />
-                            <label for="item-body">Item Category</label>
+                           <hr>
+                           <label for="item-body">Item Category</label>
                            <input class="text" name="item-body" type="body" id="item-body" />
-                         
+
                            <!-- showing error to client -->
                            <div class="message-createitem"></div>
                    </div>

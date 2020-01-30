@@ -34,7 +34,7 @@ module.exports = function(passport, user) {
  
  
  
-            User.findOne({
+            User.findOne({  
                 where: {
                     email: email
                 }

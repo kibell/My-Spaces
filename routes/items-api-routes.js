@@ -15,7 +15,7 @@ module.exports = function(app) {
   // GET route for retrieving all of the item data from the DOM
   app.get("/api/items", function(req, res) {
     const query = {};
-    if (req.query) {
+    if (req.query.id) {
       query.StorageId = req.query.id;
     }
     // 1. Add a join here to include all of the Storages to these Items
@@ -42,7 +42,7 @@ module.exports = function(app) {
   });
 
   // POST route for saving a new Item
-  app.post("/api/items/:id", function(req, res) {
+  app.post("/api/items/", function(req, res) {
     db.Item.create(req.body).then(function(dbItem) {
       res.json(dbItem);
     });

@@ -5,15 +5,15 @@ module.exports = function(app) {
   // GET route for getting all of the areas
   app.get("/api/areas", function(req, res) {
     const query = {};
-      if (req.query) {
+      if (req.query.id) {
       query.userId = req.user.id;
       }
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.user
-    db.area.findAll({
+    db.Area.findAll({
       where: query,
-      include: [db.user]
+      include: [db.User]
     }).then(function(dbAreas) {
       res.json(dbAreas);
     });
@@ -24,11 +24,11 @@ module.exports = function(app) {
     // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.user
-    db.areas.findOne({
+    db.Area.findOne({
       where: {
         id: req.params.id
       },
-      include: [db.user]
+      include: [db.User]
     }).then(function(dbAreas) {
       res.json(dbAreas);
     });
@@ -39,14 +39,14 @@ module.exports = function(app) {
   
 
     req.body.userId = req.user.id
-    db.area.create(req.body).then(function(dbAreas) {
+    db.Area.create(req.body).then(function(dbAreas) {
       res.json(dbAreas);
     });
   });
 
   // DELETE route for deleting areas
   app.delete("/api/areas/:id", function(req, res) {
-    db.areas.destroy({
+    db.Area.destroy({
       where: {
         id: req.params.id
       }
@@ -57,7 +57,7 @@ module.exports = function(app) {
 
   // PUT route for updating areas
   app.put("/api/areas", function(req, res) {
-    db.areas.update(
+    db.Area.update(
       req.body,
       {
         where: {

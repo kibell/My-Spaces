@@ -11,8 +11,6 @@ const express = require("express");
 const methodOverride = require("method-override");
 const exphbs = require("express-handlebars");
 
-
-
 const app = express();
 const PORT = process.env.PORT || 8000;
 
@@ -31,7 +29,7 @@ app.use(express.json());
 
 //for PassPort
 
-require('./config/passport/passport')(passport,models.user)
+require('./config/passport/passport')(passport,models.User)
 app.use(session({ secret: 'keyboard cat',
 resave: true, 
 saveUninitialized:true})); // session secret
@@ -51,7 +49,7 @@ app.use(flash());
 const db = require("./models");
 
 // Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({ extended: true }));  
 app.use(express.json());
 
 // Override POST with ?_method=PUT
@@ -74,12 +72,9 @@ require("./routes/storage-api-routes.js")(app);
 require("./routes/area-api-routes")(app);
 
 
-
-
-
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
-    db.sequelize.sync({ force: true }).then(function() {
+    db.sequelize.sync({ force: false }).then(function() {
       app.listen(PORT, function() {
         console.log("App listening on PORT " + PORT);
       });

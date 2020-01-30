@@ -1,14 +1,17 @@
 $(document).ready(function() {
-  const itemsArray = [];
+
+  const itemsArray = []; 
   const itemName = $('#item-name');
   const itemBody = $('#item-body');
   const itemForm = $('#new-item');
   const itemBarcode = $('#barcode');
   const savedListContainer = $('#items-view-drop');
+  const itemsList = $('#items-list');
 
   // Creates a flag set initially to true if item is being created.
   let isUpdated = false;
-  
+  let url = window.location.search;
+
   // If we have this section in our url, we pull out the item id from the url
   // In '?item_id=1', itemId is 1
   if (url.indexOf("?item_id=") !== -1) {
@@ -17,7 +20,7 @@ $(document).ready(function() {
   }
   // Otherwise if we have an storage_id in our url, preset the storage select box to be our Storage
   else if (url.indexOf("?storage_id=") !== -1) {
-    authorId = url.split("=")[1];
+    storageId = url.split("=")[1];
   }
 
   $('#add-item-button').on('click', function() {
@@ -43,29 +46,28 @@ $(document).ready(function() {
     }
     
         // If the item is being updated then run updateItem
-    if (isUpdated ) {
-      newItem.id = itemId;
+    if (isUpdated) {
       updateItem(newItem); 
+      console.log('updates')
     } else { 
       submitItem(newItem);
+      console.log('submits')
     }
   });
 
-  function submitItem(item) {
-    $.post("/api/items", item, function() {
-      window.location.href = "/item";
-    });
+  function submitItem(Item) {
+    $.post("/api/items", Item)
+    .then(getItems);
   }
 
-  function updateItem(item) {
+  function updateItem(Item) {
     $.ajax({
       method: "PUT",
       url: "/api/items",
-      data: item
-    }).then(function() {
-      window.location.href = "/item"
-    });
+      data: Item
+    }).then(getItems);
   };
+
 
   // Get item data for the current storage container if we are updating the item data
   function getItemData(id,type) {
@@ -80,111 +82,116 @@ $(document).ready(function() {
       default: 
       return; 
   }
+}
 
-  $.get(queryURL, function(res) {
-    if (res) {
-      console.log(res); 
-    //   JsBarcode('#barcode', res.newItem.id || res.id, {
-    //     format: "pharmacode", 
-    //     lineColor: "#0aa",
-    //     width: 4,
-    //     height: 40,
-    //     displayValue: false
-    // });
-      // // If this post exists, prefill our cms forms with its data
-      // title.val(res.title);
-      // body.val(res.body);
-      // storageId = data.AuthorId || data.id;
-      // // If we have a post with this id, set a flag for us to know to update the post
-      // // when we hit submit
-      // updating = true;
-  }
-  });
-};
+//   $.get(queryURL, function(res) {
+//     if (res) {
+//       console.log(res); 
+//     //   JsBarcode('#barcode', res.newItem.id || res.id, {
+//     //     format: "pharmacode", 
+//     //     lineColor: "#0aa",
+//     //     width: 4,
+//     //     height: 40,
+//     //     displayValue: false
+//     // });
+//       // // If this post exists, prefill our cms forms with its data
+//       // title.val(res.title);
+//       // body.val(res.body);
+//       // storageId = data.AuthorId || data.id;
+//       // // If we have a post with this id, set a flag for us to know to update the post
+//       // // when we hit submit
+//       // updating = true;
+//   }
+//   });
+// };
 
-  // Function for creating a new list row for authors
+  // Function for creating a new list row for items
   function createItemRow(itemData) {
-    var newTr = $("<tr>");
-    newTr.data("author", itemData);
-    newTr.append("<td>" + itemData.name + "</td>");
-    if (itemData.Posts) {
-      newTr.append("<td> " + itemData.Posts.length + "</td>");
+    console.log(itemData);
+    var newTr = $('<div class="row item-row">').addClass(' btn button-drag list-item')
+    newTr.data("item", itemData);
+    newTr.append(`<div class="md-col-6 row-title">${itemData.newItem.title} </div>`);  
+    if (itemData.item) {
+      newTr.append(`<div class="md-col-6"> ${itemData.item.length} "</div>" `);
     } else {
-      newTr.append("<td>0</td>");
+      newTr.append("<div>0<div>");
     }
-    newTr.append("<td><a href='/blog?author_id=" + itemData.id + "'>Go to Posts</a></td>");
-    newTr.append("<td><a href='/cms?author_id=" + itemData.id + "'>Create a Post</a></td>");
-    newTr.append("<td><a style='cursor:pointer;color:red' class='delete-author'>Delete Author</a></td>");
+    newTr.append("<div><a style='cursor:pointer;color:red' class='delete-item'>Delete Item</a></div>");
     return newTr;
   }
 
-  // Function for retrieving authors and getting them ready to be rendered to the page
-  function getItems() {
-    $.get("/api/items", function(res) {
-      var rowsToAdd = [];
-      for (var i = 0; i < res.length; i++) {
-        rowsToAdd.push(createItemRow(res[i]));
+   // Function for retrieving authors and getting them ready to be rendered to the page
+   function getItems() {
+    $.get("/api/items", function(data) {
+      let rowsToAdd = [];
+      for (const i = 0; i < data.length; i++) {
+        rowsToAdd.push(createItemRow(data[i]));
       }
-      renderItems(rowsToAdd);
+      renderItemList(rowsToAdd);
       nameInput.val("");
     });
   }
 
-  // A function for rendering the list of authors to the page
-  function renderAuthorList(rows) {
-    authorList.children().not(":last").remove();
-    savedListContainer.children(".alert").remove();
-    if (rows.length) {
-      console.log(rows);
-      authorList.prepend(rows);
-    }
-    else {
-      renderEmpty();
-    }
+// A function for rendering the list of authors to the page
+function renderItemList(rows) {
+  itemsList.children().not(":last").remove();
+  savedListContainer.children(".alert").remove();
+  if (rows.length) {
+    console.log(rows);
+    itemsList.prepend(rows);
   }
-
-//define a function which render new button for items
-function renderItems (rows) {
-
-  $("#items-view").empty();
-
-  for (let i=0; i<itemsArray.length; i++) {
-      const bt = $('<div>').addClass(' btn button-drag list-item').attr('id',`more-items${i}`);
-      bt.attr("draggable","true")
-      bt.text(itemsArray[i]);
-      $("#items-view").append(bt);
+  else {
+    renderEmpty();
   }
 }
 
-  // Function for handling what to render when there are no authors
+  // Function for handling what to render when there are no storages
   function renderEmpty() {
     var alertDiv = $("<div>");
     alertDiv.addClass("alert alert-danger");
-    alertDiv.text("You must create an Author before you can create a Post.");
-    authorContainer.append(alertDiv);
+    alertDiv.text("You must create a Storage before you can create an Item.");
+    savedListContainer.append(alertDiv);
   }
 
   // Function for handling what happens when the delete button is pressed
   function handleDeleteButtonPress() {
-    var listItemData = $(this).parent("td").parent("tr").data("author");
+    var listItemData = $(this).parent(".row-title").parent(".item-row").data("item");
     var id = listItemData.id;
     $.ajax({
       method: "DELETE",
-      url: "/api/authors/" + id
+      url: "/api/items/" + id
     })
-      .then(getAuthors);
+      .then(getItems);
   }
 
+// $("#add-item-button").on("click", function(event){
+//     event.preventDefault();
 
-$("#add-item-button").on("click", function(event){
-    event.preventDefault();
+//     const newItem = $("#new-item-input").val().trim();
+//     itemsArray.push(newItem);
 
-    const newItem = $("#new-item-input").val().trim();
-    itemsArray.push(newItem);
+//     renderItems();
+// });
 
-    renderItems();
-});
+// $.ajax({
+//   method: "GET",
+//   url: "/api/"
+// })
 
+
+
+//  //define a function which render new button for items
+//  function renderQueryItems(itemsArray) {
+//   console.log(itemsArray);
+//     $("#items-view").empty();
+  
+//     for (let i=0; i<itemsArray.length; i++) {
+//         const bt = $('<div>').addClass(' btn button-drag list-item').attr('id',`more-items${i}`);
+//         bt.attr("draggable","true")
+//         bt.text(itemsArray[i]);
+//         $("#items-view").append(bt);
+//     };
+//   };
 
 const itemList = $(".items-list");
 const itemArea = $(".list");
@@ -231,7 +238,5 @@ $('.list').on('drop', function(e) {
   $(this).css('background-color', 'transparent');
   draggedItem = null;
 }); 
-
-renderItems();
-;
+// renderQueryItems();
 });
