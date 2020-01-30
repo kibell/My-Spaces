@@ -78,7 +78,15 @@ module.exports = function(app) {
   app.get("/search", function(req, res){
     const term = req.query; 
     
-
+    db.Item.findAll({
+      where : {
+        title : { 
+          [Op.like]: '%' + term + '%' 
+        }
+      }
+    }).then(function(dbItems){
+      res.render('item-list', dbItems); 
+    }); 
 
   })
 };
