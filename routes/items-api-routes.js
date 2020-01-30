@@ -7,6 +7,9 @@
 
 // Requiring our models
 const db = require("../models");
+//Added sequelize and op operator to use like operator in search query
+const Sequelize = require("sequelize"); 
+const Op = Sequelize.Op; 
 
 // Routes
 // =============================================================
@@ -73,7 +76,9 @@ module.exports = function(app) {
   });
 
   app.get("/search", function(req, res){
+    const term = req.query; 
     
+
 
   })
 };
