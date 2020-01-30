@@ -71,5 +71,10 @@ module.exports = function(app) {
       res.json(dbItem);
     });
   });
+
+  app.get("/search", function(req, res){
+    
+
+  })
 };
 
