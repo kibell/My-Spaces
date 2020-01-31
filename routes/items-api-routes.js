@@ -16,34 +16,34 @@ module.exports = function(app) {
   app.get("/api/items", function(req, res) {
     const query = {};
     if (req.query.storage_id) {
-      query.StorageId = req.query.storage_id;
+      query.storageId = req.query.storage_id;
     }
     // 1. Add a join here to include all of the Storages to these Items
-    db.Item.findAll({
-        where: query,
-        include: [db.Storage]
+    db.item.findAll({
+        // where: query,
+        // include: [db.storage]
     }).then(function(dbItem) {
       res.json(dbItem);
     });
   });
 
   // Get route for retrieving a single Item
-  app.get("/api/Items/:id", function(req, res) {
-    // 2. Add a join here to include the Storage 
-    db.Item.findOne({
-      where: {
-        id: req.params.id
-      },
-      include: [db.Storage]
-    }).then(function(dbItem) {
-      console.log(dbItem);
-      res.json(dbItem);
-    });
-  });
+  // app.get("/api/Items/:id", function(req, res) {
+  //   // 2. Add a join here to include the Storage 
+  //   db.Item.findOne({
+  //     where: {
+  //       id: req.params.id
+  //     },
+  //     include: [db.storage]
+  //   }).then(function(dbItem) {
+  //     console.log(dbItem);
+  //     res.json(dbItem);
+  //   });
+  // });
 
   // POST route for saving a new Item
   app.post("/api/items", function(req, res) {
-    db.Item.create(req.body).then(function(dbItem) {
+    db.item.create(req.body).then(function(dbItem) {
       res.json(dbItem);
     });
   });
@@ -61,7 +61,7 @@ module.exports = function(app) {
 
   // PUT route for updating Item
   app.put("/api/items", function(req, res) {
-    db.Item.update(
+    db.item.update(
       req.body,
       {
         where: {

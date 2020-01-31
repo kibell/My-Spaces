@@ -8,15 +8,20 @@ $(document).ready(function() {
     const nameInputStorage = $("#storage-input")
     const storageList = $("#storage-append");
     const storageContainer = $(".storage-container")
+    const nameInputItem = $("#item-input")
+    const itemList = $("#item-append");
+    const itemContainer = $(".storage-container")
 
     console.log(storageList)
     // Adding event listeners to the form to create a new object, and the button to delete
     // an Author
     $(document).on("submit", ".area-form", handleAreaFormSubmit);
     $(document).on("click", ".delete-area", handleDeleteButtonPress);
+    $(document).on("submit", ".area-form", handleAreaFormSubmit);
   
     // Getting the initial list of areas
     getareas();
+    getitems();
   
     // A function to handle what happens when the form is submitted to create a new Author
     function handleAreaFormSubmit(event) {
@@ -62,7 +67,7 @@ $(document).ready(function() {
     function createStorageRow(storageData) {
                 const newTS = $("<div>");
                 newTS.attr("<div>" + storageData.id + "</div>");
-              //   newTr.attr("data-target", "#new-storages");
+                newTS.attr("data-target", storageData.id);
                 // newTr.attr("data-toggle", "modal");
                 newTS.append("<div>" + storageData.name + "</div>");
                 newTS.append("<a style='cursor:pointer; color:green;' class='new-item' data-toggle='modal' data-target='#new-storage' >Add Item</a>")
@@ -72,8 +77,63 @@ $(document).ready(function() {
                 return newTS
               }
 
+//appending Items-------------------------------------------------
+function handleItemFormSubmit(event) {
+    event.preventDefault();
+    console.log("item!!")
+    // Don't do anything if the name fields hasn't been filled out
+    if (!nameInputItem.val().trim().trim()) {
+      return;
+    }
+    // Calling the upsertArea function and passing in the value of the name input
+    upsertArea({
+      name: nameInputItem
+        .val()
+        .trim()
+    });
+  }
+function createItemRow(itemData) {
+    const newTS = $("<div>");
+    newTS.attr("<div>" + itemData.id + "</div>");
+    newTS.attr("data-target", itemData.id);
+    // newTr.attr("data-toggle", "modal");
+    newTS.append("<div>" + itemData.name + "</div>");
+    newTS.append("<a style='cursor:pointer; color:green;' class='new-item' data-toggle='modal' data-target='#new-item' >Add Item</a>")
+  //   newTr.addClass("new-storage");
+    newTS.addClass("btn");
+
+    return newTS
+  }
 
 
+
+
+  function getitems() {
+    $.get("/api/items", function(data) {
+      const rowsToAdd = [];
+      console.log(data)
+      for (let i = 0; i < data.length; i++) {
+        rowsToAdd.push(createItemRow(data[i]));
+      }
+      renderItemList(rowsToAdd);
+      nameInputItem.val("");
+    });
+  }
+
+  function renderItemList(rows) {
+        // areaList.children().not(":last").remove();
+        itemContainer.children(".alert").remove();
+        if (rows.length) {
+        //   console.log(rows);
+          itemList.prepend(rows);
+        }
+        else {
+          
+        }
+      }
+
+
+//------------------------------------------------
 
               function getstorages() {
                     $.get("/api/storages", function(data) {
@@ -176,7 +236,7 @@ $(document).ready(function() {
         // $(document).on('click', '#createStorageBtn', function(e){
                 const dataId = $('#createStorageBtn').data('area')
                 
-                console.log(dataId)
+                console.log("what is data" + dataId)
 
             const storageData = {
                 name: nameInputStorage
@@ -203,5 +263,13 @@ $(document).ready(function() {
         //     .trim()
         // });
       }
+
+      $(document).on('click', '.new-item', function() {
+        let storageId = $(this).parent().data('target') 
+        console.log(storageId);
+    //     $.get("/api/storages/" + storageId, function(storageData) {
+    //     console.log('hello', storageData) 
+    //   });
+    });
 
 });
