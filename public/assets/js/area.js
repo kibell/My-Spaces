@@ -17,6 +17,7 @@ $(document).ready(function() {
   
     // Getting the initial list of areas
     getareas();
+    getstorages();
   
     // A function to handle what happens when the form is submitted to create a new Author
     function handleAreaFormSubmit(event) {
