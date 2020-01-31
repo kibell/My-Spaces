@@ -6,9 +6,9 @@ module.exports = function(app) {
   app.get("/api/areas", function(req, res) {
      const query = {};
 
-     if (req.query.userid) {
-      query.userId = req.query.userid;
-    }
+     
+      query.userId = req.user.id;
+    
     
     // query.userId = req.query.userid;
     
@@ -95,4 +95,4 @@ module.exports = function(app) {
       res.json(dbAreas);
     });
   });
-};
+}
