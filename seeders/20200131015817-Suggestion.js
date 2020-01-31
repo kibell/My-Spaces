@@ -5,23 +5,23 @@ module.exports = {
     'Suggestions',
     [
       {
-        name: '', 
-        storage_type: '', 
-        description: ''
+        name: 'First aid kit', 
+        storage_type: 'General Storage', 
+        description: 'First aid kit'
       }, 
       {
-        name: '', 
-        storage_type: '', 
-        description: ''
+        name: 'Batteries', 
+        storage_type: 'General Storage', 
+        description: 'Batteries'
       }, 
       {
-        name: '', 
-        storage_type: '', 
+        name: 'Light bulbs', 
+        storage_type: 'General Storage', 
         description: ''
       },
       {
-        name: '', 
-        storage_type: '', 
+        name: 'Trash bags', 
+        storage_type: 'General Storage', 
         description: ''
       }
 
