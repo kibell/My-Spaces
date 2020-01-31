@@ -163,6 +163,39 @@ html, body {
     text-align: center
     }
 
+
+    
+.icone-spaces {
+    font-size: 70px;
+    text-align: center;
+    color: #7A92B3;
+    /* padding: 8px;
+    margin: 10px 10px 10px 45px; */
+
+}
+
+
+ .img-area {
+
+    width: 79%;
+    height: 79%;
+    /* margin: 10px 10px 10px 10px; */
+    border-radius: 50%!important
+} 
+
+.button-list {
+
+  list-style : none;
+  float:left;
+}
+
+li.button-list-item {
+    display: inline-block;
+    width: 20%;
+    height: 20%;
+    margin-left: -14px;
+}
+
 /* card */
 .card-header {
     text-transform: uppercase;

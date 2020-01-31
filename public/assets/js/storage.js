@@ -1,77 +1,210 @@
-// $(document).ready(function() {
 
+$(document).ready(function() {
 
-//     // const nameInputStorage = $("#storage-input")
-//     const storageList = $("#storage-append");
-//     const storageContainer = $(".storage-container")
+    // declaring variables for displaying areas button on your areas 
+    const areaBtn = $(".area-btn");
+    const areaDisplay = $(".area-display");
+    // declaring variables for displaying storage button on your areas 
+    const storageBtn = $(".storage-btn")
+    const storageDisplay = $(".storage-display")
+   
+    
+    //onclick event for area part 
+    $(areaBtn).on("click", function (){
+        
+            console.log("i clicked!! ");
+            $(areaDisplay).append(this);
+            creatToggle()  
+    })
+  
+    //onclick event for area part 
+    $(storageBtn).on("click", function (){
+        
+      console.log("i clicked!! ");
+      $(storageDisplay).append(this);
+      creatToggle()  
+  })
+    
+    
+    function creatToggle () {
+    
+     
+        $('.toggle').click(function(){
+        //get collapse content selector
+        var collapse_content_selector = $(this).attr('href');
+    
+        //make the collapse content to be shown or hide
+        var toggle_switch = $(this);
+        $(collapse_content_selector).toggle()
+    
+    
+      });
+    
+    }
+    
+    });
+  
+  
+  
+  
+  
+  
+  // const areaBtn = $(".area-btn");
+  // // const areaSection = $(".area-section")
+  // const areaDisplay = $(".area-display");
+  // // const storageKitchen = $(".storage-kitchen")
+  
+  // let action = 1;
+  
+  // $(areaBtn).on("click", function (){
+  
+  //   if (action === 1) {
+  
+  //     console.log("i clicked!! ");
+  //     $(areaDisplay).append(this);
+  //       action = 2;
+  //     console.log(action)
+  
+  //     return;
+  //   } if (action === 2 ) {
+  
+  //     creatToggle();
+  
+  // }
+  
+  
+  // })
+  
+  
+  // function creatToggle () {
+  
+  //   $('.toggle').click(function(){
+  //       //get collapse content selector
+  //       const collapse_content_selector = $(this).attr('href');
+    
+  //       //make the collapse content to be shown or hide
+  //       const toggle_switch = $(this);
+  //       $(collapse_content_selector).toggle(function(){
+  // 			  if(areaDisplay.css('display')=='block'){
+  //                                 //change the button label to be 'Show'
+  //           areaDisplay.css('display')=='none'
+  // 			  }else{
+  //                                 //change the button label to be 'Hide'
+  //           areaDisplay.css('display')=='block';
+  // 			  }
+  // 			});
+  //     });
+  // }
+  
+  
+  
+  
+  // const areaBtn = $(".area-btn");
+  // const areaSection = $(".area-section")
+  // const storageKitchen = $(".storage-kitchen")
+  //let action = 1;
+  
+  
+  
+  
+  
+  //  const areaBtn = $(".area-btn");
+  //  const areaDisplay = $(".area-display");
+  //  let clickItem ;
+  
+  //  const buttonArray = [
+  
+  //    kitchen = {
+  
+  //     id : "kitchen-storage",
+  //     click: false
+  
+  //    },
+  
+  //   bedroom = {
+  //     id : "bedroom-storage",
+  //     click: false
+  //   },
+   
+  //   livingroom = {
+  
+  //     id: "livinroom-storage",
+  //     click: false
+  //    },
+    
+  //   bathroom = {
+  //     id: "bathroom-storage",
+  //     click: false
+  //   }  
+   
+  // ]
+  
+  
+  // $(areaBtn).on("click", function (){
+  
+      
+  //         console.log("i clicked!! ");
+  //         $(areaDisplay).append(this);
+  //         manageButton();
+  
+  // })
+  
+  
+  
+  
+  // function manageButton () {
+  
+  //   for (let i=0; i<buttonArray.legnth; i++) {
+     
+  //     targetItem = $(this).attr("id");
+  
+  //     if(targetItem === buttonArray[i].id) {
+       
+  //       if($(this).css('display') ==='none'){
+  
+  //         $(this).css("display", "block")
+  
+  //         buttonArray[i].click === true;
+  
+  //       //clickItem.show();
+  //       return;
+  
+  //       }
+        
+  //     } else {
+  
+  //     }
+      
+  //   }
+  
+  
+  // }
+  
+  
 
-//     // $(document).on("submit", ".storage-form", handleStorageFormSubmit) 
-
-//     // function handleStorageFormSubmit(event) {
-//     //     event.preventDefault();
-//     //     // Don't do anything if the name fields hasn't been filled out
-//     //     if (!nameInputStorage.val().trim().trim()) {
-//     //       return;
-//     //     }
-//     //     // Calling the upsertArea function and passing in the value of the name input
-//     //     upsertStorage({
-//     //       name: nameInputStorage
-//     //         .val()
-//     //         .trim()
-//     //     });
-//     //   }
-
-//     // A function for creating an Storage. Calls getStorage upon completion
-//     //   function upsertStorage(storageData) {
-//     //     $.post("/api/storages", storageData)
-//     //       .then(getstorages);
-//     //   }
-
-
-//       function createStorageRow(storageData) {
-//         const newTS = $("<div>");
-//         newTS.attr("<div>" + storageData.id + "</div>");
-//       //   newTr.attr("data-target", "#new-storages");
-//         // newTr.attr("data-toggle", "modal");
-//         newTS.append("<div>" + storageData.name + "</div>");
-//         newTS.append("<a style='cursor:pointer; color:green;' class='new-item' data-toggle='modal' data-target='#new-storage' >Add Item</a>")
-//       //   newTr.addClass("new-storage");
-//         newTS.addClass("btn");
-
-//         return newTS
-//       }
-
-//  // Function for retrieving Storages and getting them ready to be rendered to the page
-//  function getstorages() {
-//     $.get("/api/storages", function(data) {
-//       const rowsToAdd = [];
-//       for (let i = 0; i < data.length; i++) {
-//         rowsToAdd.push(createStorageRow(data[i]));
-//       }
-//       renderStorageList(rowsToAdd);
-//       nameInputStorage.val("");
-//     });
-//   }
-
-//   function renderStorageList(rows) {
-//     // areaList.children().not(":last").remove();
-//     storageContainer.children(".alert").remove();
-//     if (rows.length) {
-//     //   console.log(rows);
-//       storageList.prepend(rows);
-//     }
-//     else {
-//       renderEmpty();
-//     }
-//   }
-
-
-//   function renderEmpty() {
-//     const alertDiv = $("<div>");
-//     alertDiv.addClass("alert alert-danger");
-//     alertDiv.text("Create an Area By Clicking the + sign .")
-//     storageContainer.append(alertDiv);
-//   }
-
-//   getstorages();
-// })
+  
+  
+  
+  // $(areaBtn).on("click", function (){
+  //     if(action === 1) {
+  
+  //         console.log("i clicked!! ");
+  //         $(areaDisplay).append(this);
+  //         action = 2;
+  //         console.log(action)
+  
+  //         return;
+  
+  //     } if(action === 2) {
+  
+  //         creatToggle ()
+      
+  //         action = 1;
+  //         console.log(action)
+      
+  
+  //     };
+  
+  
+  // })
+  

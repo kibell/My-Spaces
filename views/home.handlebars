@@ -40,92 +40,378 @@
         </div>
     </nav> <!--navbar-->
 
+
     
 
         <!--mainpage-->
     <div class="container mt-4">
-        
-        <div class="row mt-4">
-                    <br>
-                <!--profile part-->
-            <div class="col-md-4"> 
-                <div class="card card-profile" >
-                    <div class="card-header">Your profile</div>
-                    <div class="card-body">
-
-                        <div class='row'>
-
-                            <div class='col-lg-4 col-sm-2'></div>
-                                
-                            <div class='col-lg-4 col-sm-8'>
-                                <div class="profile-userpic">
-                                    <i class="fas fa-user" id="user-icone"></i> 
-                                </div>
-                            </div>
-                            <div class='col-lg-4 col-sm-2'></div>
-                                
-                        </div>
-
-                            <div class="profile-usertitle">
+                   <!--profile part-->
+                <div class="profile-div">
+                <div class="row mt-4">
+                <div class="col-md-12">
+                    <div class="card mb-3 card-area" >
+                         <div class="card-body show">
+                             <div class="profile-usertitle">
                                 <div class="profile-usertitle-name">
-                                    
-                                    <h3>Profile Information</h3>
+                                        
+                                        <h3> hello !</h3>
 
-                                    
-                                    <p>Welcome {{firstname}} {{lastname}}</p>
-                                                            
+                                        <p>Welcome {{firstname}} {{lastname}}</p>
+                                                                
                                 </div>
                             </div>
-                            <div class="profile-usermenu"></div>
+                         </div>
                     </div>
-                </div>     
-            </div> <!--profile part-->
-                    
+                     </div>
+                </div>
+                </div>
 
-
-             <!--spaces part-->
-             <!--col-8-->
-            <div class="col-md-8"> 
+                <!--this is the div that we have for area part we can show and hide it -->
+        <div class="area-div"id="area-list">
+        <div class="row mt-4">
+            <div class="col-md-12"> 
                      <!--card for space area -->
                 <div class="card mb-3 card-area" >
-                        <div class="card-header">Your spaces</div>
+                        {{!-- <div class="card-header">Your spaces</div> --}}
                             <div class="card-body show">
-                                <div class="row mt-4">
-                                    <div class="col-md-6">
-                                        <div class="row">
-                                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                    <ul class=" button-list">
 
-                                                <a href="#" type="submit"  data-toggle="modal" data-target="#area-modal"><i class="fas fa-plus icone-spaces"></i></a>
-                                                 <br>
-                                                <div class="area-container">
-                            
-                                                <span class="title-area">Add Areas</span>
-                                                
-                                                    <table class="table table-striped">
-                                                                    
-                                                        <tbody class ="area-append">
-                                                            <tr id="form-row-main">
-                                                                <form class="area-form">
-                                                                    <td colspan="4">
-                                                                    
-                                                                </form>
-                                                            </tr>
-                                                        </tbody>
+                                        <li class="button-list-item area-btn">
+                                            <a href="#" type="button" data-toggle="modal" data-target="#area-modal" class="btn">
+                                                <i class="fas fa-plus icone-spaces"></i>
+                                                {{!-- <img src="assets/img/signe-1923369_1920.png" alt="plus-sign" class="img-thumbnail img-area"> --}}
+                                                <br>
+                                                <span class="title-area">add more areas</span>
+                                            </a>
+                                            
+                                        </li>
+                                        <li class="button-list-item area-btn">
+                                            <a href="#kitchen-storag" type="button"  data-list="#kitchen-storage" class="btn toggle" >
+                                                <img src="assets/img/kitchen1.jpg" alt="kitchen-area" class="img-thumbnail img-area">
+                                                <br>
+                                                <span class="title-area">kitchen</span>
+                                            </a>
+                                            
+                                        </li>
+                                        <li class="button-list-item area-btn">
+                                            <a href="#livinroom-storage" type="button"  data-list="#livinroom-storage" class="btn toggle">
+                                                <img src="assets/img/livingroom1.jpg" alt="livingroom" class=" img-thumbnail img-area">
+                                                <br>
+                                                <span class="title-area">livingroom</span>
+                                            </a>
+                                            
+                                        </li>
+                                        <li class="button-list-item area-btn">
+                                            <a href="#bedroom-storage" type="button"  data-list="#bedroom-storage" class="btn toggle">
+                                                <img src="assets/img/bedroom1.jpg" alt="bedroom-area" class="img-thumbnail img-area">
+                                                <br>
+                                                <span class="title-area">bedroom</span>
+                                            </a>
+                                           
+                                        </li>
+                                        <li class="button-list-item area-btn">
+                                            <a href="#bathroom-storage" type="button"  data-list="#bathroom-storage" class="btn toggle">
+                                                <img src="assets/img/bathroom2.jpg" alt="bedroom-area" class="img-thumbnail img-area">
+                                                <br>
+                                            <span class="title-area">bathroom</span>
+                                            </a>
 
-                                                    </table>
-                                                </div>
-                                            </div>                                
-                                        </div>
+                                        </li>
+
+                                    </ul>
+
                                     </div> 
-                                     <div class="col-md-6 storage-container">
 
-                                     </div>
                                 </div>
                             </div>
                         <!--card for space area -->
                 </div>
-                        <!--col-8-->
+                       
             </div>
+             <!--col-12-->
+        </div>
+        <!-- closing the row  -->
+        <div class="row mt-4  area-section">
+            <div class="col-md-12">
+                <div class="card mb-3 card-area" >
+                    <div class="card-header">Your Areas</div>
+                    <div class="card-body area-append area-display"> </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+                <!--this is the div that we have for storages in kitchen part we can show and hide it -->
+        <div class=" storage-div storage-kitchen d-none"   id="kitchen-storage">
+        <div class="row mt-4">
+            <div class="col-md-12"> 
+                     <!--card for storages in kitchen -->
+                <div class="card mb-3 card-area" >
+                        {{!-- <div class="card-header">Your spaces</div> --}}
+                            <div class="card-body show">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                    <ul class=" button-list">
+
+                                        <li class="button-list-item">
+                                            <a href="#area-list" type="submit" data-toggle="modal" data-target="#new-storages" class="btn">
+                                                <i class="fas fa-plus icone-spaces"></i>
+                                                {{!-- <img src="assets/img/signe-1923369_1920.png" alt="plus-sign" class="img-thumbnail img-area"> --}}
+                                                <br>
+                                                <span class="title-area">add more storages</span>
+                                            </a>
+            
+                                            
+                                        </li>
+                                        <li class="button-list-item storage-btn">
+                                                    <a type="submit" id="pantry-button" href="#" class="btn">
+                                                        <img src="assets/img/pantry.jpg" alt="pantry" class="img-thumbnail img-area">
+                                                    <br>
+                                                    <span class="title-area">pantry</span>
+                                                    </a>
+                                        </li>
+                                        <li class="button-list-item storage-btn">
+                                            <a href="#" type="submit" data-toggle="modal" data-target="#modal-livingroom"class="btn">
+                                                <img src="assets/img/cabinet.jpg" alt="cabinet" class=" img-thumbnail img-area">
+                                                <br>
+                                                <span class="title-area">cabinet</span>
+                                            </a>
+                                            
+                                        </li>
+
+                                    </ul>
+
+                                    </div> 
+
+                                </div>
+                            </div>
+                        <!--card for space area -->
+                </div>
+                       
+            </div>
+             <!--col-12-->
+        </div>
+        <!-- closing the row  -->
+        <div class="row mt-4 d-block d-none ">
+            <div class="col-md-12">
+                <div class="card mb-3 card-area" >
+                    <div class="card-header">Your KItchen</div>
+                    <div class="card-body kitchen-display" id = "storage-append">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+                <!--this is the div that we have for storages in bed room part we can show and hide it -->
+        <div class=" storage-div storage-bedroom  d-none"   id="bedroom-storage">
+        <div class="row mt-4">
+            <div class="col-md-12"> 
+                     <!--card for storages in kitchen -->
+                <div class="card mb-3 card-area" >
+                        {{!-- <div class="card-header">Your spaces</div> --}}
+                            <div class="card-body show">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                    <ul class=" button-list">
+
+                                        <li class="button-list-item">
+                                            <a href="#area-list" type="submit" data-toggle="modal" data-target="#new-storages" class="btn">
+                                                <i class="fas fa-plus icone-spaces"></i>
+                                                {{!-- <img src="assets/img/signe-1923369_1920.png" alt="plus-sign" class="img-thumbnail img-area"> --}}
+                                                <br>
+                                                <span class="title-area">add more storages</span>
+                                            </a>
+            
+                                            
+                                        </li>
+                                        <li class="button-list-item storage-btn">
+                                                    <a type="submit" id="pantry-button" href="#" class="btn">
+                                                         <img src="assets/img/closet2.jpg" alt="closet" class=" img-thumbnail img-area">
+                                                    <br>
+                                                    <span class="title-area">walking closet</span>
+                                                    </a>
+                                        </li>
+                                        <li class="button-list-item storage-btn">
+                                            <a href="#" type="submit" data-toggle="modal" data-target="#modal-livingroom"class="btn">
+                                                <img src="assets/img/drawer.jpg" alt="drawer" class=" img-thumbnail img-area">
+                                                <br>
+                                                <span class="title-area">Drawer</span>
+                                            </a>
+                                            
+                                        </li>
+
+                                    </ul>
+
+                                    </div> 
+
+                                </div>
+                            </div>
+                        <!--card for space area -->
+                </div>
+                       
+            </div>
+             <!--col-12-->
+        </div>
+        <!-- closing the row  -->
+        <div class="row mt-4 d-block d-none">
+            <div class="col-md-12">
+                <div class="card mb-3 card-area" >
+                    <div class="card-header">Your Bedroom</div>
+                    <div class="card-body bedroom-display" id = "storage-append">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+                <!--this is the div that we have for storages in living room part we can show and hide it -->
+        <div class=" storage-div  storage-livingroom d-none"   id="livinroom-storage">
+        <div class="row mt-4">
+            <div class="col-md-12"> 
+                     <!--card for storages in kitchen -->
+                <div class="card mb-3 card-area" >
+                        {{!-- <div class="card-header">Your spaces</div> --}}
+                            <div class="card-body show">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                    <ul class=" button-list">
+
+                                        <li class="button-list-item">
+                                            <a href="#area-list" type="submit" data-toggle="modal" data-target="#new-storages" class="btn">
+                                                <i class="fas fa-plus icone-spaces"></i>
+                                                {{!-- <img src="assets/img/signe-1923369_1920.png" alt="plus-sign" class="img-thumbnail img-area"> --}}
+                                                <br>
+                                                <span class="title-area">add more storages</span>
+                                            </a>
+            
+                                            
+                                        </li>
+                                        <li class="button-list-item storage-btn">
+                                                    <a type="submit" id="living room-button" href="#" class="btn">
+                                                         <img src="assets/img/shelf.jpg" alt="shelfs" class="img-thumbnail img-area">
+                                                        <br>
+                                                        <span class="title-area">shelfs</span>
+                                                    </a>
+                                        </li>
+
+                                        <li class="button-list-item storage-btn">
+                                            <a href="#" type="submit" data-toggle="modal" data-target="#modal-livingroom"class="btn">
+                                                <img src="assets/img/drawer1.jpg" alt="drawer" class=" img-thumbnail img-area">
+                                                <br>
+                                                <span class="title-area">Drawer</span>
+                                            </a>
+                                            
+                                        </li>
+
+                                        <li class="button-list-item storage-btn">
+                                            <a href="#" type="submit" data-toggle="modal" data-target="#modal-livingroom"class="btn">
+                                                <img src="assets/img/tvstand.jpg" alt="tv-stand" class=" img-thumbnail img-area">
+                                                <br>
+                                                <span class="title-area">tv-stand</span>
+                                            </a>
+                                            
+                                        </li>
+
+                                    </ul>
+
+                                    </div> 
+
+                                </div>
+                            </div>
+                        <!--card for space area -->
+                </div>
+                       
+            </div>
+             <!--col-12-->
+        </div>
+        <!-- closing the row  -->
+        <div class="row mt-4 d-block d-none">
+            <div class="col-md-12">
+                <div class="card mb-3 card-area" >
+                    <div class="card-header">Your living room</div>
+                    <div class="card-body livingroom-display" id = "storage-append">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+        
+                <!--this is the div that we have for storages in bath room part we can show and hide it -->
+        <div class=" storage-div storage-bathroom  d-none"   id="bathroom-storage">
+        <div class="row mt-4">
+            <div class="col-md-12"> 
+                     <!--card for storages in kitchen -->
+                <div class="card mb-3 card-area" >
+                        {{!-- <div class="card-header">Your spaces</div> --}}
+                            <div class="card-body show">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                    <ul class=" button-list">
+
+                                        <li class="button-list-item">
+                                            <a href="#area-list" type="submit" data-toggle="modal" data-target="#new-storages" class="btn">
+                                                <i class="fas fa-plus icone-spaces"></i>
+                                                <br>
+                                                <span class="title-area">add more storages</span>
+                                            </a>
+            
+                                            
+                                        </li>
+                                        <li class="button-list-item storage-btn">
+                                                    <a type="submit" id="living room-button" href="#" class="btn">
+                                                        <img src="assets/img/laundry-room.jpg" alt="laundry" class="img-thumbnail img-area">
+                                                        <br>
+                                                        <span class="title-area">laundry shelfs</span>
+                                                    </a>
+                                        </li>
+
+                                        <li class="button-list-item storage-btn">
+                                            <a href="#" type="submit" data-toggle="modal" data-target="#modal-livingroom"class="btn">
+                                                <img src="assets/img/bathroomcabinet.jpg" alt="bathroom-cabinet" class=" img-thumbnail img-area">
+                                                <br>
+                                                <span class="title-area">cabinet</span>
+                                            </a>
+                                            
+                                        </li>
+
+
+
+                                    </ul>
+
+                                    </div> 
+
+                                </div>
+                            </div>
+                        <!--card for space area -->
+                </div>
+                       
+            </div>
+             <!--col-12-->
+        </div>
+        <!-- closing the row  -->
+        <div class="row mt-4 d-block d-none ">
+            <div class="col-md-12">
+                <div class="card mb-3 card-area" >
+                    <div class="card-header">Your bathroom</div>
+                    <div class="card-body bathroom-display" id = "storage-append">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+           
+           <!-- modal is start here --->
+    
         <!-- modals for spaces part-->
     <div class="modal fade " id="area-modal" tabindex="-1" role="dialog"
             aria-labelledby="exampleModalLongTitle" aria-hidden="true">
@@ -146,14 +432,14 @@
                                     
                                 </tr>
                             </thead>
-                            <tbody class = "area-append">
+                            <tbody class = "area">
                                 <tr id="form-row">
                                     <form class="area-form">
                                         <td colspan="4">
                                             <input placeholder="Enter a name" id="area-input" type="text" />
                                         </td>
                                         <td>
-                                            <button type="submit" class="btn  modals-button-spaces">Create Area</button>
+                                            <button type="submit" class="btn  modals-button">Create Area</button>
                                         </td>
                                     </form>
                                 </tr>
@@ -193,7 +479,7 @@
                                         <td colspan="4">
                                             <input placeholder="Enter a name" id="storage-input" type="text" />
                                         </td>
-                                        <td><button type="submit" class="btn modals-button-spaces" id ="createStorageBtn">Create Storage</button>
+                                        <td><button type="submit" class="btn modals-button" id ="createStorageBtn">Create Storage</button>
                                         </td>
                                     </form>
                                 </tr>
@@ -244,11 +530,6 @@
                 </div>
         <!-- closing the col related to spaces -->
         
-    
-  </div>
-        <!-- closing the row  -->
-
-    </div>
 
     <!-- closing the container -->
       

@@ -21,7 +21,7 @@ $(document).ready(function() {
   
     // Getting the initial list of areas
     getareas();
-    getitems();
+    getstorages();
   
     // A function to handle what happens when the form is submitted to create a new Author
     function handleAreaFormSubmit(event) {
@@ -254,14 +254,6 @@ function createItemRow(itemData) {
                         getstorages();
                 });
 
-        // });
-
-        // Calling the upsertArea function and passing in the value of the name input
-        // upsertStorage({
-        //   name: nameInputStorage
-        //     .val()
-        //     .trim()
-        // });
       }
 
       $(document).on('click', '.new-item', function() {
