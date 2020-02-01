@@ -65,25 +65,11 @@ html, body {
 }
 
 /*profile*/
-.profile-sidebar {
-    float: left;
-    width: 300px;
-    margin-right: 20px
-}
 
-.profile-content {
-    overflow: hidden
-}
 
-.profile-sidebar-portlet {
-    padding: 30px 0 0!important
-}
 
-#user-icone {
-    font-size: 100px;
-    text-align: center;
-    color: #7A92B3;
-}
+
+
 .icone-spaces {
     font-size: 100px;
     text-align: center;
@@ -95,10 +81,7 @@ html, body {
 
 
 
-.profile-userpic {
-    float: none;
-    width: 26%;
-}
+
 
 .profile-usertitle {
     text-align: center;
@@ -113,25 +96,15 @@ html, body {
 }
 
 
-.profile-userbuttons {
-    text-align: center;
-    margin-top: 10px
-}
+
 
 .profile-userbuttons .btn {
     margin-right: 5px
 }
 
-.profile-userbuttons .btn:last-child {
-    margin-right: 0
-}
 
-.profile-userbuttons button {
-    text-transform: uppercase;
-    font-size: 11px;
-    font-weight: 400;
-    padding: 6px 15px
-}
+
+
 
 .profile-usermenu {
     margin-top: 30px;
@@ -218,7 +191,7 @@ li.button-list-item {
 .title-area {
     text-transform: uppercase;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 12px;
     font-weight: 500;
     text-align: center;
     margin-left: 42px ; 
@@ -302,6 +275,7 @@ li.button-list-item {
     animation-name: moveInLeft;
     animation-duration: 2s;
     animation-timing-function: ease-out;
+    margin-bottom: 15px;
     /* animation-delay: 2s; */
     /* animation-iteration-count: 2; */
 }
@@ -484,6 +458,26 @@ li.button-list-item {
     margin: 20px;
     flex-grow: 1;
     min-height:85vh;
+  }
+
+
+
+  /* making responsive  */
+
+  @media only screen and (max-width:765px) {
+
+    .button-list {
+
+        list-style : none;
+        float:left;
+      }
+      
+      li.button-list-item {
+          display: inline-block;
+          width: 10%;
+          height:10%;
+          margin-left: -5px;
+      }
   }
 
 

@@ -2,12 +2,12 @@
 $(document).ready(function() {
 
     //onclick event for area part 
-    $(".area-div").on("click", ".area-btn",  function () {
+    $(".area-div").on("click", ".area-btn",  function (e) {
         
-
+             e.preventDefault()
             console.log("i clicked!! ");
 
-            $(".area-display").append(this);
+            // $(".area-display").append(this);
             creatToggle()  
 
             const newArea = {
