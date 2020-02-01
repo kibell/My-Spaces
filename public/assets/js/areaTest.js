@@ -7,11 +7,6 @@ $(document).ready(function () {
   const areaList = $(".area-append");
   const areaContainer = $(".area-container");
 
-  // Append the existing button to areaList 
-  // Call the upsertArea 
-  // Add a Post Route 
-$(".area-append").
-
   $(".createAreaBtn").click(function () {
 
 
