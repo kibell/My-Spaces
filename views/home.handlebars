@@ -156,11 +156,19 @@
         <div class="row mt-4">
             <div class="col-md-12 col-ms-6"> 
                      <!--card for storages in kitchen -->
+<<<<<<< HEAD
                 <div class="card mb-3 card-area" >
                         <div class="card-header">Your choices for kitchen</div>
                             <div class="card-body show">
                                 <div class="row">
                                     <div class="col-md-12 col-ms-6">
+=======
+                <div class="card mb-3 card-area"   >
+                        {{!-- <div class="card-header">Your spaces</div> --}}
+                            <div class="card-body ">
+                                <div class="row">
+                                    <div class="col-md-12" id = "storage-append">
+>>>>>>> e51c0513a76a1ddaef1b19a41b1b5d0b5f69df23
                                     <ul class=" button-list">
 
                                         <li class="button-list-item">
@@ -206,7 +214,7 @@
             <div class="col-md-12 col-ms-6">
                 <div class="card mb-3 card-area" >
                     <div class="card-header">Your KItchen</div>
-                    <div class="card-body kitchen-display" id = "storage-append">
+                    <div class="card-body kitchen-display" >
                     </div>
                 </div>
             </div>
@@ -268,7 +276,7 @@
             <div class="col-md-12 col-ms-6">
                 <div class="card mb-3 card-area" >
                     <div class="card-header">Your Bedroom</div>
-                    <div class="card-body bedroom-display" id = "storage-append">
+                    <div class="card-body bedroom-display">
                     </div>
                 </div>
             </div>
@@ -341,7 +349,7 @@
             <div class="col-md-12 col-ms-6">
                 <div class="card mb-3 card-area" >
                     <div class="card-header">Your living room</div>
-                    <div class="card-body livingroom-display" id = "storage-append">
+                    <div class="card-body livingroom-display" >
                     </div>
                 </div>
             </div>
@@ -407,7 +415,7 @@
             <div class="col-md-12 col-ms-6">
                 <div class="card mb-3 card-area" >
                     <div class="card-header">Your bathroom</div>
-                    <div class="card-body bathroom-display" id = "storage-append">
+                    <div class="card-body bathroom-display">
                     </div>
                 </div>
             </div>
@@ -432,25 +440,17 @@
                     </div>
                     <div class="modal-body area-part">
                     <h1>Areas</h1>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
-                                    
-                                </tr>
-                            </thead>
-                            <tbody class = "area">
+                        
+                            <div class = "area">
                                 <tr id="form-row">
                                     <form class="area-form">
-                                        <td colspan="4">
-                                            <input placeholder="Enter a name" id="area-input" type="text" />
-                                        </td>
-                                        <td>
-                                            <button type="submit" class="btn  modals-button">Create Area</button>
-                                        </td>
-                                    </form>
-                                </tr>
-                            </tbody>
+                                        
+                     <input placeholder="Enter a name" id="area-input" type="text" />
+                                        
+                    <button type="button" class="btn  modals-button-spaces createAreaBtn">Create Area</button>
+                                        
+                     </form>
+                            </div>
                         </table>
                     </div>
                     </div>
@@ -473,29 +473,22 @@
                     </div>
                     <div class="modal-body storage-part">
                     <h1>Storage</h1>
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Name</th>
+                        
+                            <div>
+                               
+                                     <form class="storage-form">
                                     
-                                </tr>
-                            </thead>
-                            <tbody id = "storage-append">
-                                <tr id="form-row-storage">
-                                    <form class="storage-form">
-                                        <td colspan="4">
-                                            <input placeholder="Enter a name" id="storage-input" type="text" />
-                                        </td>
-                                        <td><button type="submit" class="btn modals-button" id ="createStorageBtn">Create Storage</button>
-                                        </td>
-                                    </form>
-                                </tr>
-                            </tbody>
-                        </table>
+             <input placeholder="Enter a name" id="storage-input" type="text" />
+                 <button type="button" class="btn modals-button-spaces createStorageBtn">Create Storage</button>
+                                        
+                                             </form>
+
+                               
                     </div>
                     </div>
                 </div>
     </div>
+        </div>
         
         
         <!-- closing the col related to spaces -->

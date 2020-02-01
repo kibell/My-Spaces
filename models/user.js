@@ -52,14 +52,15 @@ module.exports = function(sequelize, Sequelize) {
 
       User.associate = function(models) {
         // We're saying that an Area should belong to an User
-        // A Area can't be created without an User due to the foreign key constraint
-        User.hasMany(models.area, {
+    //     // A Area can't be created without an User due to the foreign key constraint
+    //     User.belongsToMany(models.area, {
+    //     through: models.storage,
             
-            onDelete: "cascade" 
-            // foreignKey: 'userId',
-             
+    //         // foreignKey: 'userId',
+    //         constraints: true ,
+    //         foreignKey:'areaId'
             
-      })
+    //   })
      
     
 

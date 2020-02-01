@@ -5,10 +5,8 @@ module.exports = function(sequelize, DataTypes) {
     
     // Giving the Storage model a name of type STRING
     name: DataTypes.STRING,
-
-
-    
-  });
+    } 
+  );
 
   Storage.associate = function(models) {
     // Associating Storage with Items
@@ -16,7 +14,15 @@ module.exports = function(sequelize, DataTypes) {
     
 
     Storage.belongsTo(models.area,{
-     
+      foreignKeyConstraint: true ,
+      foreignKey:'areaId'
+      
+
+    })
+
+    Storage.hasMany(models.item,{
+
+
     })
 
  
