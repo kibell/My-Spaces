@@ -1,33 +1,7 @@
 {
-<<<<<<< HEAD
- 
-    "development": {
-      "username": "root",
-      "password": null,
-      "database": "myspaces",
-      "host": "127.0.0.1",
-      "dialect": "mysql",
-      "operatorsAliases": false
-    },
- 
-    "test": {
- 
-        "username": "root",
-        "password": null,
-        "database": "myspaces",
-        "host": "127.0.0.1",
-        "dialect": "mysql"
-    },
- 
-    "production": {
- 
-        "use_env_variable":"JAWSDB_URL"
- 
-    }
-=======
   "development": {
     "username": "root",
-    "password": "root",
+    "password": null,
     "database": "myspaces",
     "host": "127.0.0.1",
     "dialect": "mysql",
@@ -44,5 +18,4 @@
   "production": {
     "use_env_variable":"JAWSDB_URL"
   }
->>>>>>> f433caf555d38146837611158d7038511da01389
 }
