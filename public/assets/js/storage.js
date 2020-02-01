@@ -1,7 +1,7 @@
 $(document).ready(function() {
 console.log("i worrrrkkkk")
     const nameInputStorage = $("#storage-input")
-      const storageList = $("#storage-append");
+      const storageList = $(".storage-append");
       const storageContainer = $(".storage-container")
 
 
