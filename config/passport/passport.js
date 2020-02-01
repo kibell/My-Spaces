@@ -188,3 +188,5 @@ passport.deserializeUser(function(userId, done) {
 });
 
 }
+
+// Login Validation 

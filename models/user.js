@@ -34,22 +34,19 @@ module.exports = function(sequelize, Sequelize) {
             defaultValue: 'active'
         }
  
- 
     })
-   
 
       User.associate = function(models) {
         // We're saying that an Area should belong to an User
         // A Area can't be created without an Author due to the foreign key constraint
         User.hasMany(models.Area, {
             onDelete: "cascade" ,
+            foreignKey: "UserId"
+            })
             // foreignKey: 'userId',
   
-      })
+      };
      
-    
-
-    };
 
     // User.associate = function(models) {
     //     // We're saying that an Area should belong to an User

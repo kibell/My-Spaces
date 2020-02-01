@@ -32,7 +32,7 @@ module.exports = function(app) {
     // 2. Add a join here to include the Storage 
     db.Item.findOne({
       where: {
-        id: req.params.barcode_id
+        id: req.params.id
       },
       include: [db.Storage]
     }).then(function(dbItem) {
@@ -52,7 +52,7 @@ module.exports = function(app) {
   app.delete("/api/items/:id", function(req, res) {
     db.Item.destroy({
       where: {
-        id: req.params.barcode_id
+        id: req.params.id
       }
     }).then(function(dbItem) {
       res.json(dbItem);
@@ -65,7 +65,7 @@ module.exports = function(app) {
       req.body,
       {
         where: {
-          id: req.body.barcode_id
+          id: req.body.id
         }
       }).then(function(dbItem) {
       res.json(dbItem);

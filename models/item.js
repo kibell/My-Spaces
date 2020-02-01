@@ -17,7 +17,8 @@ module.exports = function(sequelize, DataTypes) {
   Item.associate = function(models) {
     // We're saying that a Item should belong to an Storage
     // A Items can't be created without an Storage due to the foreign key constraint
-    Item.belongsTo(models.storage, {
+    Item.belongsTo(models.Storage, {
+      onDelete: "cascade",
       foreignKey: {
         allowNull: false
       }
