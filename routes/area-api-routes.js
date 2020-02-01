@@ -8,15 +8,9 @@ module.exports = function(app) {
     const query = {};
     const userid = req.UserId;
 
-<<<<<<< HEAD
       if (userid) {
       query.UserId = userid;
     }
-=======
-     
-      query.userId = req.user.id;
-    
->>>>>>> e51c0513a76a1ddaef1b19a41b1b5d0b5f69df23
     
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
