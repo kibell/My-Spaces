@@ -5,9 +5,8 @@ module.exports = function(sequelize, DataTypes) {
     
     // Giving the Storage model a name of type STRING
     name: DataTypes.STRING,
-
-    
-  });
+    } 
+  );
 
   Storage.associate = function(models) {
     // Associating Storage with Items
