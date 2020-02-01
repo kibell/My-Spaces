@@ -4,77 +4,62 @@ module.exports = function(app) {
     
   // GET route for getting all of the areas
   app.get("/api/areas", function(req, res) {
-     const query = {};
+    console.log(req);
+    const query = {};
+    const userid = req.UserId;
 
-     
-      query.userId = req.user.id;
-    
-    
-    // query.userId = req.query.userid;
+      if (userid) {
+      query.UserId = userid;
+    }
     
     // Here we add an "include" property to our options in our findAll query
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.user
-    db.area.findAll({
+    db.Area.findAll({
       where: query,
-      include: [db.user],
-      
+      include: [db.User]
     }).then(function(dbAreas) {
       res.json(dbAreas);
     });
   });
 
-  app.get("/api/area/storages", function(req, res) {
-    // Here we add an "include" property to our options in our findAll query
+
+  // Get route for retrieving a single Areas
+  app.get("/api/areas/:id", function(req, res) {
+    // Here we add an "include" property to our options in our findOne query
     // We set the value to an array of the models we want to include in a left outer join
-    // In this case, just db.area
-
-    const query = {};
-    
-    query.id = req.storage.areaId;
-    db.area.findAll({
-        where: query,
-      include: [db.storage]
-    }).then(function(dbArea) {
-      res.json(dbArea);
-    });
-  });
-
-//   // Get route for retrieving a single Areas
-//   app.get("/api/areas/:id", function(req, res) {
-//     // Here we add an "include" property to our options in our findOne query
-//     // We set the value to an array of the models we want to include in a left outer join
-//     // In this case, just db.user
-//     db.area.findOne({
-//       where: {
-//         id: req.params.id
-//       },
-//       include: [db.user]
-//     }).then(function(dbAreas) {
-//       res.json(dbAreas);
-//     });
-//   });
-
-  // Areas route for saving a new Areas
-  app.post("/api/areas", function(req, res) {
-  
-
-    req.body.userId = req.user.id
-    db.area.create(req.body).then(function(dbAreas) {
+    // In this case, just db.user
+    db.Area.findOne({
+      where: {
+        id: req.params.id
+      },
+      include: [db.User]
+    }).then(function(dbAreas) {
       res.json(dbAreas);
     });
   });
 
+  // Areas route for saving a new Areas
+  app.post("/api/areas", function(req, res) {
+ 
+    // let thing = req.body
+    // console.log(thing);
+    // console.log('===========================================')
+    // thing.id = req.user.id;
+    // console.log(thing);
+    // console.log('===========================================')
+    // console.log(req.user);
+    // console.log('===========================================')
 
 
-
-
-
-
+    db.Area.create(req.body).then(function(dbAreas) {
+      res.json(dbAreas);
+    });
+  });
 
   // DELETE route for deleting areas
   app.delete("/api/areas/:id", function(req, res) {
-    db.areas.destroy({
+    db.Area.destroy({
       where: {
         id: req.params.id
       }
@@ -85,7 +70,7 @@ module.exports = function(app) {
 
   // PUT route for updating areas
   app.put("/api/areas", function(req, res) {
-    db.areas.update(
+    db.Area.update(
       req.body,
       {
         where: {

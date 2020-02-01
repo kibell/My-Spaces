@@ -34,7 +34,7 @@ module.exports = function(passport, user) {
  
  
  
-            User.findOne({
+            User.findOne({  
                 where: {
                     email: email
                 }
@@ -188,3 +188,5 @@ passport.deserializeUser(function(userId, done) {
 });
 
 }
+
+// Login Validation 

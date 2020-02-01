@@ -110,7 +110,8 @@ $(document).ready(function() {
     $(".storage-bathroom").on("click",".storage-btn" , function (e){
         e.preventDefault()
         console.log("i clicked!! ");
-        $(".bathroom-display").append(this);
+        const bathroom_storage = $(".bathroom-display").append(this);
+        
 
         const newStorage = {
 
@@ -144,7 +145,7 @@ $(document).ready(function() {
         //make the collapse content to be shown or hide
         var toggle_switch = $(this);
         // $(collapse_content_selector).toggle()
-        $(".storage-div").addClass("d-none  ");
+        $(".storage-div").addClass("d-none");
         switch (collapse_content_selector) {
             case "#kitchen-storage":
                 {

@@ -4,26 +4,28 @@ module.exports = function(app) {
   app.get("/api/storages", function(req, res) {
     // 1. Add a join to include all of each Storage's Items
      const query = {};
-      //  query.areaId = req.body.areaId
-   
+    
+     if (req.StorageId) {
+     query.StorageId = req.StorageId
+     }
      
-    db.storage.findAll({
-      // where: query,
-        include: [db.area],
+    db.Storage.findAll({
+      where: query,
+        include: [db.Area],
         
     }).then(function(dbStorage) {
       res.json(dbStorage);
     });
-    console.log(res, req)
+    
   });
 
   app.get("/api/storages/:id", function(req, res) {
     // 2; Add a join to include all of the Storage's Items here
-    db.storage.findOne({
+    db.Storage.findOne({
       where: {
         id: req.params.id
       },
-      include: [db.Areas]
+      include: [db.Area]
     }).then(function(dbStorage) {
       res.json(dbStorage);
     });
@@ -31,16 +33,14 @@ module.exports = function(app) {
 
 
   app.post("/api/storages", function(req, res) {
-
-    
-    // req.body.areaId = req.area.id
-    db.storage.create(req.body).then(function(dbStorage) {
+    console.log(req.body);
+    db.Storage.create(req.body).then(function(dbStorage) {
       res.json(dbStorage);
     });
   });
 
   app.delete("/api/storages/:id", function(req, res) {
-    db.storage.destroy({
+    db.Storage.destroy({
       where: {
         id: req.params.id
       }
@@ -53,7 +53,7 @@ module.exports = function(app) {
 
 // PUT route for updating areas
 app.put("/api/storages", function(req, res) {
-  db.storage.update(
+  db.Storage.update(
     req.body,
     {
       where: {
