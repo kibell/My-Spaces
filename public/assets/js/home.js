@@ -1,63 +1,74 @@
+$(document).ready(function () {
+  
 
-$(document).ready(function() {
+    // $(document).on('click', '.storage-btn', function() {
+    //     let storageId = $(this).parent().data('target') 
+    //     console.log(storageId)
+    //     $.get("/api/storages/" + storageId, function(storageData) {
+    //       window.location.href = `/item/storage_id=${storageId}`
+    //   });
+    //     $.post("/api/storages/" , {
+    //         storageId: storageId
+    //     });
+    // });
 
     //onclick event for area part 
-    $(".area-div").on("click", ".area-btn",  function (e) {
-        
-             e.preventDefault()
-            console.log("i clicked!! ");
+    $(".area-div").on("click", ".area-btn", function (e) {
 
-            // $(".area-display").append(this);
-            creatToggle()  
+        e.preventDefault()
+        console.log("i clicked!! ");
 
-            const newArea = {
+        // $(".area-display").append(this);
+        creatToggle()
 
-                name: $(this).children('.btn').text()
-                
-           };
+        const newArea = {
 
-           console.log(newArea)
-           $.ajax("/api/areas", {
-               type: "POST",
-               data: newArea
-           }).then(
-               function(){
-                   console.log("i am grabing buttons !! yeaaa");
-                   
-               }
-           );
+            name: $(this).children('.btn').text()
+
+        };
+
+        console.log(newArea)
+        $.ajax("/api/areas", {
+            type: "POST",
+            data: newArea
+        }).then(
+            function () {
+                console.log("i am grabing buttons !! yeaaa");
+
+            }
+        );
 
 
     })
 
 
-  
+
     //onclick event for kitchen part 
-    $(".storage-kitchen").on("click",".storage-btn" , function (e){
+    $(".storage-kitchen").on("click", ".storage-btn", function (e) {
         e.preventDefault()
-      console.log("i clicked!! ");
-      $(".kitchen-display").append(this);
+        console.log("i clicked!! ");
+        $(".kitchen-display").append(this);
 
-      const newStorage = {
+        const newStorage = {
 
-        name: $(this).children('.btn').text()
-        
-   };
+            name: $(this).children('.btn').text()
 
-   console.log(newStorage)
-   $.ajax("/api/storages", {
-       type: "POST",
-       data: newStorage
-   }).then(
-       function(){
-           console.log("i am grabing buttons !! yeaaa");
-           
-       }
-   );
-   
-  })
-      //onclick event for bedroom part 
-    $(".storage-bedroom").on("click",".storage-btn" , function (e){
+        };
+
+        console.log(newStorage)
+        $.ajax("/api/storages", {
+            type: "POST",
+            data: newStorage
+        }).then(
+            function () {
+                console.log("i am grabing buttons !! yeaaa");
+
+            }
+        );
+
+    })
+    //onclick event for bedroom part 
+    $(".storage-bedroom").on("click", ".storage-btn", function (e) {
         e.preventDefault()
         console.log("i clicked!! ");
         $(".bedroom-display").append(this);
@@ -65,129 +76,116 @@ $(document).ready(function() {
         const newStorage = {
 
             name: $(this).children('.btn').text()
-            
-       };
-    
-       console.log(newStorage)
-       $.ajax("/api/storages", {
-           type: "POST",
-           data: newStorage
-       }).then(
-           function(){
-               console.log("i am grabing buttons !! yeaaa");
-               
-           }
-       );
-     
+
+        };
+
+        console.log(newStorage)
+        $.ajax("/api/storages", {
+            type: "POST",
+            data: newStorage
+        }).then(
+            function () {
+                console.log("i am grabing buttons !! yeaaa");
+
+            }
+        );
+
     })
 
-          //onclick event for livingroom part 
-    $(".storage-livingroom").on("click",".storage-btn" , function (e){
-            e.preventDefault()
+    //onclick event for livingroom part 
+    $(".storage-livingroom").on("click", ".storage-btn", function (e) {
+        e.preventDefault()
         console.log("i clicked!! ");
         $(".livingroom-display").append(this);
 
         const newStorage = {
 
             name: $(this).children('.btn').text()
-            
-       };
-    
-       console.log(newStorage)
-       $.ajax("/api/storages", {
-           type: "POST",
-           data: newStorage
-       }).then(
-           function(){
-               console.log("i am grabing buttons !! yeaaa");
-               
-           }
-       );
-        
+
+        };
+
+        console.log(newStorage)
+        $.ajax("/api/storages", {
+            type: "POST",
+            data: newStorage
+        }).then(
+            function () {
+                console.log("i am grabing buttons !! yeaaa");
+
+            }
+        );
+
     })
 
-        //onclick event for bathroom part 
-    $(".storage-bathroom").on("click",".storage-btn" , function (e){
+    //onclick event for bathroom part 
+    $(".storage-bathroom").on("click", ".storage-btn", function (e) {
         e.preventDefault()
         console.log("i clicked!! ");
-        const bathroom_storage = $(".bathroom-display").append(this);
-        
+
 
         const newStorage = {
 
             name: $(this).children('.btn').text()
-            
-       };
-    
-       console.log(newStorage)
-       $.ajax("/api/storages", {
-           type: "POST",
-           data: newStorage
-       }).then(
-           function(){
-               console.log("i am grabing buttons !! yeaaa");
-               
-           }
-       );
-        
-    })
-    
 
-    
-    
-    function creatToggle () {
-    
-     
-        $('.toggle').click(function(){
-        //get collapse content selector
-        var collapse_content_selector = $(this).attr('data-list');
-    
-        //make the collapse content to be shown or hide
-        var toggle_switch = $(this);
-        // $(collapse_content_selector).toggle()
-        $(".storage-div").addClass("d-none");
-        switch (collapse_content_selector) {
-            case "#kitchen-storage":
-                {
+        };
+
+        console.log(newStorage)
+        $.ajax("/api/storages", {
+            type: "POST",
+            data: newStorage
+        }).then(
+            function () {
+                console.log("i am grabing buttons !! yeaaa");
+
+            }
+        );
+
+    })
+
+
+
+
+    function creatToggle() {
+
+
+        $('.toggle').click(function () {
+            //get collapse content selector
+            var collapse_content_selector = $(this).attr('data-list');
+
+            //make the collapse content to be shown or hide
+            var toggle_switch = $(this);
+            // $(collapse_content_selector).toggle()
+            $(".storage-div").addClass("d-none");
+            switch (collapse_content_selector) {
+                case "#kitchen-storage": {
                     $("#kitchen-storage").toggleClass("d-none");
-    
+
                 }
                 break;
-                case "#livinroom-storage":
-                {
-                    $("#livinroom-storage").toggleClass("d-none");
-    
-                }
-                break;
-                case "#bathroom-storage":
-                {
-                    $("#bathroom-storage").toggleClass("d-none");
-    
-                }
-                break;
-                case "#bedroom-storage":
-                    {
-                        $("#bedroom-storage").toggleClass("d-none");
-        
-                    }
-                break;
-        
+            case "#livinroom-storage": {
+                $("#livinroom-storage").toggleClass("d-none");
+
+            }
+            break;
+            case "#bathroom-storage": {
+                $("#bathroom-storage").toggleClass("d-none");
+
+            }
+            break;
+            case "#bedroom-storage": {
+                $("#bedroom-storage").toggleClass("d-none");
+
+            }
+            break;
+
             default:
                 break;
-        }
+            }
 
-    
-    
-      });
-    
+
+
+        });
+
     }
-    
-    });
-  
-  
-  
-  
-  
-  
-  
-  
+
+});

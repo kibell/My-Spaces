@@ -73,14 +73,6 @@ $(document).ready(function () {
     }
 
     
-    $(document).on('click', '.new-item', function() {
-        let storageId = $(this).parent().data('target') 
-        console.log(storageId);
-        $.get("/api/storages/" + storageId, function(storageData) {
-          window.location.href = `/item/storage_id=${storageId}`
-      });
-    });
-    
 
     function renderStorageList(rows) {
         // areaList.children().not(":last").remove();
