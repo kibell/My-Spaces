@@ -34,7 +34,7 @@
 
 ## Animated Gifs/Pictures of App
 
- !(./public/assets/img/organized%20spaces.gif)
+ ![](./public/assets/img/organized%20spaces.gif)
 
 ## Tech Stack
 
