@@ -1,7 +1,7 @@
 # My-Spaces
 
 
-> [![Project 2](https://drive.google.com/file/d/14U3OeG8dYRuEUWC2pT-9Be8ti2LJg-rH/view)](https://orgspaces.herokuapp.com/)
+> [![Project 2](./public/assets/img/organized%20spaces.gif)](https://orgspaces.herokuapp.com/)
 
 ## Project Summary
 
