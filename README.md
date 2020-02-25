@@ -1,7 +1,8 @@
 # My-Spaces
 
 
-> [![Project 2](./public/assets/img/organized%20spaces.gif)](https://orgspaces.herokuapp.com/)
+>!(https://orgspaces.herokuapp.com/)
+> Click on GIF to check this out! 
 
 ## Project Summary
 
@@ -34,7 +35,7 @@
 
 ## Animated Gifs/Pictures of App
 
-
+ [[Project 2](./public/assets/img/organized%20spaces.gif)]
 
 ## Tech Stack
 
