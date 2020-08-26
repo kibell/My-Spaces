@@ -1,7 +1,7 @@
 # My-Spaces
 
 
-> [Live Site]
+>![Click Here for Link](https://orgspaces.herokuapp.com/)
 
 ## Project Summary
 
@@ -34,14 +34,15 @@
 
 ## Animated Gifs/Pictures of App
 
-
+ ![](./public/assets/img/organized%20spaces.gif)
 
 ## Tech Stack
 
+This project was built mainly using Javascript, HTML, and CSS, along with other frameworks such as Handlebars and Bootstrap. The server was created in Express while the data was stored in SQL communicating with the Sequelize npm package. 
 
 
 ## APIs
-
+**Passport.JS**
 
 ## MVP
 
@@ -52,7 +53,7 @@
 
 ## Stretch Goals
 
-
+We hope to extend this project by tagging each item in the database with a UPC barcode/QR code. 
 
 ## Future Development
 - Auto generate item IDS  -> Query based on names

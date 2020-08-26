@@ -5,11 +5,12 @@ module.exports = function(app) {
   // GET route for getting all of the areas
   app.get("/api/areas", function(req, res) {
     console.log(req);
+    ("=========")
     const query = {};
-    const userid = req.UserId;
+    const userid = req.user.id;
 
       if (userid) {
-      query.UserId = userid;
+      query.userId = userid;
     }
     
     // Here we add an "include" property to our options in our findAll query
@@ -41,17 +42,7 @@ module.exports = function(app) {
 
   // Areas route for saving a new Areas
   app.post("/api/areas", function(req, res) {
- 
-    // let thing = req.body
-    // console.log(thing);
-    // console.log('===========================================')
-    // thing.id = req.user.id;
-    // console.log(thing);
-    // console.log('===========================================')
-    // console.log(req.user);
-    // console.log('===========================================')
-
-
+    req.body.userId = req.user.id
     db.Area.create(req.body).then(function(dbAreas) {
       res.json(dbAreas);
     });

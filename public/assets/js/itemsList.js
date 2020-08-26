@@ -22,6 +22,14 @@ const itemList = $(".items-list");
 const itemArea = $(".list");
 let draggedItem = null;
 
+function createItemBarcode() {
+  for(let x = 12, y = "", i = 7; i < x; i++, y += Math.floor(Math.random()*9));
+  randomBarcode = parseInt(y);
+
+
+
+}
+
 // You can apply an event listener to more than one element without a loop
 // this will refer to the element being acted upon
 // Can't attach events to items that don't exist on run time,
