@@ -1,7 +1,7 @@
 # My-Spaces
 
 
->![Click Here for Link](https://orgspaces.herokuapp.com/)
+>[Click Here for Link]: https://orgspaces.herokuapp.com/
 
 ## Project Summary
 
